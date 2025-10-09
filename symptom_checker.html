@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Symptom Checker | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="symptom_checker.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-img"></div>
+        <p class="name">Denmark Osano</p>
+        <span class="role">student</span>
+      </div>
+      <nav class="menu">
+        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-tachometer-alt"></i> Student dashboard</button>
+        <button onclick="window.location.href='medical-records.html'"><i class="fas fa-notes-medical"></i> Medical records</button>
+        <button onclick="window.location.href='ai-assistant.html'"><i class="fas fa-robot"></i> AI Chat Assistant</button>
+        <button class="active"><i class="fas fa-stethoscope"></i> Symptom checker</button>
+      </nav>
+      <div class="quick-consultation">
+        <p>Quick Consultation</p>
+        <span>Connect with a healthcare professional instantly</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="navbar">
+        <div class="nav-links">
+          <a href="#">HOME</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">EMERGENCY CONTACT</a>
+          <a href="#">HEALTH BULLETIN</a>
+          <a href="#">FEEDBACK</a>
+        </div>
+        <div class="nav-right">
+          <i class="fas fa-bell"></i><span class="notif-count">3</span>
+          <div class="profile-dropdown">
+            <button class="dropdown-toggle"><i class="fas fa-user"></i> Denmark osano</button>
+            <div class="dropdown-menu">
+              <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
+              <a href="#"><i class="fas fa-moon"></i> Dark mode</a>
+              <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Symptom Checker -->
+      <section class="symptom-section fade-in">
+        <h2>🩺 Symptom Checker Assistant</h2>
+        <p>Describe your symptoms below, and our assistant will suggest possible causes and advice.</p>
+
+        <div class="chat-box" id="chatBox">
+          <div class="bot-message fade-in">
+            Hello <strong>Denmark</strong> 👋<br>
+            I'm your health assistant. What symptoms are you experiencing today?
+          </div>
+        </div>
+
+        <form id="symptomForm" class="symptom-form">
+          <input type="text" id="symptomInput" placeholder="Type your symptoms here... (e.g., fever, headache)" required />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const symptomForm = document.getElementById('symptomForm');
+    const symptomInput = document.getElementById('symptomInput');
+    const chatBox = document.getElementById('chatBox');
+
+    const symptomResponses = {
+      fever: "You might be experiencing a viral infection or mild flu. Stay hydrated and rest.",
+      cough: "Persistent cough could indicate a cold, bronchitis, or allergies. Monitor duration.",
+      headache: "Headaches often come from stress, dehydration, or lack of sleep. Drink water and rest.",
+      stomach: "Stomach pain may relate to indigestion or gastritis. Eat light and avoid spicy foods.",
+      sore: "Sore throat may be viral or due to dehydration. Try warm fluids and throat lozenges.",
+      default: "I'm not entirely sure. Please consult a medical professional for a detailed diagnosis."
+    };
+
+    // Simulate AI typing effect
+    function typeMessage(message) {
+      const botMsg = document.createElement('div');
+      botMsg.classList.add('bot-message');
+      chatBox.appendChild(botMsg);
+
+      let index = 0;
+      const typing = setInterval(() => {
+        botMsg.innerHTML = message.slice(0, index++) + '|';
+        if (index > message.length) {
+          clearInterval(typing);
+          botMsg.innerHTML = message;
+        }
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 30);
+    }
+
+    symptomForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = symptomInput.value.trim();
+      if (!input) return;
+
+      // Show user message
+      const userMsg = document.createElement('div');
+      userMsg.classList.add('user-message', 'fade-in-up');
+      userMsg.textContent = input;
+      chatBox.appendChild(userMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+      symptomInput.value = '';
+
+      // Simulate delay
+      setTimeout(() => {
+        let responseFound = false;
+        for (let key in symptomResponses) {
+          if (input.toLowerCase().includes(key)) {
+            typeMessage(symptomResponses[key]);
+            responseFound = true;
+            break;
+          }
+        }
+        if (!responseFound) {
+          typeMessage(symptomResponses.default);
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
