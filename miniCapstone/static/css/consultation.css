@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* soft mint background */
+  color: #19183B; /* deep navy text */
+  font-size: 1em;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+/* HEADER */
+header {
+  width: 100%;
+  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* elegant mint gradient */
+  box-shadow: 0 4px 10px rgba(161, 194, 189, 0.6);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.4s ease;
+}
+
+
+
+header:hover {
+  background: linear-gradient(to right, #E7F2EF, #A1C2BD); /* subtle hover tint */
+}
+
+
+.header-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* LOGO (left side) */
+.nav-left img {
+  vertical-align: middle;
+  align-items: left;
+  height: 55px;
+  width: 200px;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+.nav-left img:hover {
+  transform: scale(1.05);
+}
+
+/* NAVIGATION MENU (center) */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #19183B;
+  font-weight: 500;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #708993;
+}
+/* LOGIN BUTTON (right side) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-right a, .nav-right .login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #19183B;
+  background: transparent;
+  color: #19183B;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nav-right a:hover, .nav-right .login-button:hover {
+  background-color: #19183B;
+  color: #E7F2EF;
+}
+
+
+/* HERO SECTION */
+.hero {
+  display: flex;   
+  gap: 60px;  
+  align-items: center;         
+  justify-content: center;                   
+  background: linear-gradient(to right, #E7F2EF,#9fd5cd);
+  padding: 120px 50px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;        
+}
+.hero-content {
+  max-width: 600px;
+  text-align: center; /* align hero text to the left side */
+  margin-left: 0;
+}
+
+
+.hero h1 {
+  font-size: 2.8em;
+  color: #19183B;
+}
+
+.hero p {
+  color: #708993;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* FORM SECTION */
+.consultation-form-section {
+  max-width: 450px;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.form-container {
+
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.form-container h2 {
+  color: #19183B;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  color: #19183B;
+  margin-bottom: 8px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #A1C2BD;
+  border-radius: 10px;
+  font-size: 1em;
+  background-color: #E7F2EF;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #708993;
+  box-shadow: 0 0 5px rgba(112,137,147,0.4);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.radio-group label {
+  font-weight: normal;
+}
+
+/* SUBMIT BUTTON */
+.btn-submit {
+  width: 100%;
+  background-color: #19183B;
+  color: #E7F2EF;
+  padding: 10px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #708993;
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+footer {
+  background-color: #19183B;
+  color: #E7F2EF;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

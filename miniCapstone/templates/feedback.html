@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="feedback.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-img"></div>
+        <p class="name">Denmark Osano</p>
+        <span class="role">student</span>
+      </div>
+      <nav class="menu">
+        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-tachometer-alt"></i> Student dashboard</button>
+        <button onclick="window.location.href='medical-records.html'"><i class="fas fa-notes-medical"></i> Medical records</button>
+        <button onclick="window.location.href='ai-assistant.html'"><i class="fas fa-robot"></i> AI Chat Assistant</button>
+        <button onclick="window.location.href='symptom-checker.html'"><i class="fas fa-stethoscope"></i> Symptom checker</button>
+      </nav>
+      <div class="quick-consultation">
+        <p>Quick Consultation</p>
+        <span>Connect with a healthcare professional instantly</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="navbar">
+        <div class="nav-links">
+          <a href="#">HOME</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">EMERGENCY CONTACT</a>
+          <a href="#">HEALTH BULLETIN</a>
+          <a href="#">FEEDBACK</a>
+        </div>
+        <div class="nav-right">
+          <i class="fas fa-bell"></i><span class="notif-count">3</span>
+          <div class="profile-dropdown">
+            <button class="dropdown-toggle"><i class="fas fa-user"></i> Denmark Osano</button>
+            <div class="dropdown-menu">
+              <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
+              <a href="#"><i class="fas fa-moon"></i> Dark mode</a>
+              <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Feedback Section -->
+      <section class="feedback-section fade-in">
+        <h2>💬 We value your feedback!</h2>
+        <p>Please share your thoughts about your experience with PHINMA UI iCare.</p>
+
+        <form id="feedbackForm" class="feedback-form fade-in-up">
+          <div class="rating">
+            <span class="emoji" data-value="1">😡</span>
+            <span class="emoji" data-value="2">😕</span>
+            <span class="emoji" data-value="3">😐</span>
+            <span class="emoji" data-value="4">😊</span>
+            <span class="emoji" data-value="5">😍</span>
+          </div>
+
+          <textarea id="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
+          
+          <button type="submit"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
+        </form>
+
+        <div class="thank-you hidden">
+          <i class="fas fa-check-circle"></i>
+          <h3>Thank you for your feedback! 💖</h3>
+          <p>Your opinion helps us improve our services.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const emojis = document.querySelectorAll('.emoji');
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackText = document.getElementById('feedbackText');
+    const thankYou = document.querySelector('.thank-you');
+    let selectedRating = 0;
+
+    // Emoji animation and selection
+    emojis.forEach(emoji => {
+      emoji.addEventListener('click', () => {
+        emojis.forEach(e => e.classList.remove('selected'));
+        emoji.classList.add('selected');
+        selectedRating = emoji.dataset.value;
+      });
+    });
+
+    // Form submission with animation
+    feedbackForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (selectedRating === 0) {
+        alert('Please select a rating before submitting.');
+        return;
+      }
+
+      feedbackForm.classList.add('fade-out');
+      setTimeout(() => {
+        feedbackForm.classList.add('hidden');
+        thankYou.classList.remove('hidden');
+        thankYou.classList.add('pop-in');
+      }, 800);
+    });
+  </script>
+</body>
+</html>

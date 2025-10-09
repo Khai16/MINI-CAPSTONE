@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Bulletin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bulletin.css') }}">
+</head>
+<body>
+  <header class="header">
+    <nav class="header-container">
+      <a class="brand" href="{{ url_for('homepage_page') }}">PHINMA UI iCare</a>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="{{ url_for('dashboard_page') }}">Dashboard</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="bulletin-hero">
+      <div class="hero-content">
+        <h1>Health Bulletin</h1>
+        <p class="lead">Latest health updates, events and announcements from PHINMA UI iCare.</p>
+      </div>
+
+      <div class="hero-actions">
+        <input class="search" type="search" placeholder="Search events, topics..." aria-label="Search bulletins">
+        <select class="filter" aria-label="Filter events">
+          <option value="">All categories</option>
+          <option value="events">Events</option>
+          <option value="announcements">Announcements</option>
+          <option value="tips">Health Tips</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="bulletin-grid">
+      <article class="card">
+        <div class="card-date">
+          <span class="month">Oct</span>
+          <span class="day">15</span>
+        </div>
+        <div class="card-body">
+          <h3>Blood Donation Drive</h3>
+          <p>Join our annual blood donation to save lives. Open for students and faculty.</p>
+          <div class="card-actions">
+            <a class="btn" href="#">View details</a>
+            <a class="link" href="#">Add to calendar</a>
+          </div>
+        </div>
+      </article>
+
+    <section class="bulletin-grid">
+      <article class="card"> ... static card ... </article>
+      <article class="card"> ... static card ... </article>
+      <!-- Add more .card items or loop server-side -->
+     {% for b in bulletins %}
+     <article class="card">
+        <div class="card-date">
++          <span class="month">{{ b.month }}</span>
++          <span class="day">{{ b.day }}</span>
+        </div>
+        <div class="card-body">
+          <h3>{{ b.title }}</h3>
+          <p>{{ b.description }}</p>
+          <div class="card-actions">
+           <a class="btn" href="{{ b.link }}">View details</a>
+           <a class="link" href="#">{{ b.category | capitalize }}</a>
+         </div>
+       </div>    
+    </article>
+      {% else %}
+      <p>No bulletins available.</p>
+      {% endfor %}
+     </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System</p>
+  </footer>
+</body>
+</html>
