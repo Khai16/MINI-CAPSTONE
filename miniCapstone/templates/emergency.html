@@ -6,7 +6,7 @@
   <title>Emergency Contact | PHINMA UI iCare</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="dashboard.css" />
-  <link rel="stylesheet" href="emergency.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/emergency.css') }}">
 </head>
 <body>
   <div class="container">
@@ -15,7 +15,7 @@
     <aside class="sidebar">
       <div class="profile-card">
         <div class="profile-img"></div>
-        <p class="name">Denmark Osano</p>
+        <p class="name"></p>
         <span class="role">student</span>
       </div>
       <nav class="menu">
@@ -45,7 +45,7 @@
         <div class="nav-right">
           <i class="fas fa-bell"></i><span class="notif-count">3</span>
           <div class="profile-dropdown">
-            <button class="dropdown-toggle"><i class="fas fa-user"></i> Denmark Osano</button>
+            <button class="dropdown-toggle"><i class="fas fa-user"></i></button>
             <div class="dropdown-menu">
               <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
               <a href="#"><i class="fas fa-moon"></i> Dark mode</a>
