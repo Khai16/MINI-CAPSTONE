@@ -11,8 +11,10 @@
 body {
   background: linear-gradient(
     135deg,
-    #239BA7 0%,   /* Teal Blue */
-    #7ADAA5 100%  /* Mint Green */
+    #1A2A5C 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
   );
   font-size: 1em;
   min-height: 100vh;
@@ -34,7 +36,7 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  background: rgba(35, 155, 167, 0.85);
+  background:  #4D73C0(35, 167, 48, 0.85);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
   
@@ -87,7 +89,7 @@ header {
 }
 
 .nav-links a:hover {
-  background: #E1AA36;
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
   color: #fff;
   box-shadow: 0 0 15px rgba(225, 170, 54, 0.5);
 }
@@ -217,19 +219,19 @@ header {
    FOOTER
 =================================== */
 footer {
-  background: rgba(35, 155, 167, 0.85);
+  background:  #4D73C0(35, 155, 167, 0.85);
   color: #ECECBB;
   text-align: center;
   padding: 20px;
   font-size: 0.95em;
-  border-top: 2px solid rgba(225, 170, 54, 0.6);
-  backdrop-filter: blur(10px);
+  border-top: 5px solid rgba(225, 170, 54, 0.6);
+  backdrop-filter: blur(15px);
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
 }
 
 footer:hover {
-  background: rgba(122, 218, 165, 0.85);
+  background:  #4D73C0(122, 218, 165, 0.85);
   color: #ffffff;
 }
 
@@ -263,5 +265,19 @@ footer:hover {
 
   .feedback-header h2 {
     font-size: 32px;
+  }
+}
+/* ===================================
+   BACKGROUND ANIMATION
+=================================== */
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
