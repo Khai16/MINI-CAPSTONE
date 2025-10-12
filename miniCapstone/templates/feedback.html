@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Feedback | PHINMA UI iCare</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="feedback.css" />
 </head>
 <body>
@@ -15,7 +13,7 @@
     <aside class="sidebar">
       <div class="profile-card">
         <div class="profile-img"></div>
-        <p class="name">Denmark Osano</p>
+        <p class="name"></p>
         <span class="role">student</span>
       </div>
       <nav class="menu">
@@ -58,60 +56,36 @@
         <h2>💬 We value your feedback!</h2>
         <p>Please share your thoughts about your experience with PHINMA UI iCare.</p>
 
-        <form id="feedbackForm" class="feedback-form fade-in-up">
+        <form action="#" method="post" class="feedback-form fade-in-up">
           <div class="rating">
-            <span class="emoji" data-value="1">😡</span>
-            <span class="emoji" data-value="2">😕</span>
-            <span class="emoji" data-value="3">😐</span>
-            <span class="emoji" data-value="4">😊</span>
-            <span class="emoji" data-value="5">😍</span>
+            <label>
+              <input type="radio" name="rating" value="1" required>
+              <span class="emoji">😡</span>
+            </label>
+            <label>
+              <input type="radio" name="rating" value="2">
+              <span class="emoji">😕</span>
+            </label>
+            <label>
+              <input type="radio" name="rating" value="3">
+              <span class="emoji">😐</span>
+            </label>
+            <label>
+              <input type="radio" name="rating" value="4">
+              <span class="emoji">😊</span>
+            </label>
+            <label>
+              <input type="radio" name="rating" value="5">
+              <span class="emoji">😍</span>
+            </label>
           </div>
 
-          <textarea id="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
+          <textarea name="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
           
           <button type="submit"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
         </form>
-
-        <div class="thank-you hidden">
-          <i class="fas fa-check-circle"></i>
-          <h3>Thank you for your feedback! 💖</h3>
-          <p>Your opinion helps us improve our services.</p>
-        </div>
       </section>
     </main>
   </div>
-
-  <script>
-    const emojis = document.querySelectorAll('.emoji');
-    const feedbackForm = document.getElementById('feedbackForm');
-    const feedbackText = document.getElementById('feedbackText');
-    const thankYou = document.querySelector('.thank-you');
-    let selectedRating = 0;
-
-    // Emoji animation and selection
-    emojis.forEach(emoji => {
-      emoji.addEventListener('click', () => {
-        emojis.forEach(e => e.classList.remove('selected'));
-        emoji.classList.add('selected');
-        selectedRating = emoji.dataset.value;
-      });
-    });
-
-    // Form submission with animation
-    feedbackForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (selectedRating === 0) {
-        alert('Please select a rating before submitting.');
-        return;
-      }
-
-      feedbackForm.classList.add('fade-out');
-      setTimeout(() => {
-        feedbackForm.classList.add('hidden');
-        thankYou.classList.remove('hidden');
-        thankYou.classList.add('pop-in');
-      }, 800);
-    });
-  </script>
 </body>
 </html>
