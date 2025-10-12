@@ -1,3 +1,6 @@
+/* ==========================================
+   GENERAL STYLING
+========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,30 +9,40 @@
 }
 
 body {
-  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* soft mint background */
-  color: #19183B; /* deep navy text */
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+  );
   font-size: 1em;
+  min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.6;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
-/* HEADER */
+
+/* ==========================================
+   HEADER
+========================================== */
 header {
   width: 100%;
-  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* elegant mint gradient */
-  box-shadow: 0 4px 10px rgba(161, 194, 189, 0.6);
-  padding: 15px 0;
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.4s ease;
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,
+    #4D73C0 25%,
+    #1E6946 60%,
+    #4BBF73 100%
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
-
-
-
-header:hover {
-  background: linear-gradient(to right, #E7F2EF, #A1C2BD); /* subtle hover tint */
-}
-
 
 .header-container {
   display: flex;
@@ -41,10 +54,8 @@ header:hover {
   padding: 0 20px;
 }
 
-/* LOGO (left side) */
+/* LOGO */
 .nav-left img {
-  vertical-align: middle;
-  align-items: left;
   height: 55px;
   width: 200px;
   border-radius: 9px;
@@ -55,41 +66,23 @@ header:hover {
   transform: scale(1.05);
 }
 
-/* NAVIGATION MENU (center) */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 30px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #19183B;
-  font-weight: 500;
-  font-size: 1em;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #708993;
-}
-/* LOGIN BUTTON (right side) */
+/* NAVIGATION RIGHT SIDE */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.nav-right a, .nav-right .login-button {
+/* NAV LINKS + LOGIN BUTTON */
+.nav-right a, .login-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #19183B;
+  white-space: nowrap; 
+  border: 2px solid #ffffff;
   background: transparent;
-  color: #19183B;
-  padding: 8px 16px;
+  color: #ffffff;
+  padding: 8px 18px;
   border-radius: 25px;
   font-weight: 500;
   cursor: pointer;
@@ -97,76 +90,75 @@ header:hover {
   transition: all 0.25s ease;
 }
 
-.nav-right a:hover, .nav-right .login-button:hover {
-  background-color: #19183B;
-  color: #E7F2EF;
+/* HOVER EFFECT */
+.nav-right a:hover, .login-button:hover {
+  background-color: #ffffff;
+  color: #19183B;
+  transform: translateY(-2px);
 }
 
-
-/* HERO SECTION */
-.hero {
-  display: flex;   
-  gap: 60px;  
-  align-items: center;         
-  justify-content: center;                   
-  background: linear-gradient(to right, #E7F2EF,#9fd5cd);
-  padding: 120px 50px;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;        
-}
-.hero-content {
-  max-width: 600px;
-  text-align: center; /* align hero text to the left side */
-  margin-left: 0;
-}
-
-
-.hero h1 {
-  font-size: 2.8em;
+/* ACTIVE STATE */
+.nav-right a.active, .login-button.active {
+  background-color: #ffffff;
   color: #19183B;
 }
 
-.hero p {
-  color: #708993;
-  font-size: 1.1em;
-  margin-top: 10px;
+/* ==========================================
+   HERO + FORM MERGED SECTION
+========================================== */
+.consultation-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 100px 20px 50px;
+  background: transparent; /* ✅ No dividing line */
 }
 
-/* FORM SECTION */
+.consultation-hero h1 {
+  font-size: 2.8em;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* ==========================================
+   CONSULTATION FORM
+========================================== */
 .consultation-form-section {
-  max-width: 450px;
-  padding: 15px 10px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 50px 20px;
+  padding-bottom: 100px;
 }
 
 .form-container {
-
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
   padding: 2rem;
   border-radius: 20px;
   width: 90%;
-  max-width: 450px;
-  box-shadow: 10px 10px 5px rgba(0,0,0,0.1);
+  max-width: 500px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
   animation: fadeInUp 1s ease-in-out;
 }
 
 .form-container h2 {
-  color: #19183B;
   text-align: center;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
+/* FORM FIELDS */
 .form-group {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
   display: block;
   font-weight: 500;
-  color: #19183B;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
@@ -176,7 +168,7 @@ input, select, textarea {
   border: 2px solid #A1C2BD;
   border-radius: 10px;
   font-size: 1em;
-  background-color: #E7F2EF;
+  background-color: rgba(255, 255, 255, 0.8);
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -194,20 +186,41 @@ input:focus, select:focus, textarea:focus {
 
 .radio-group label {
   font-weight: normal;
+  color: #ffffff;
 }
 
-/* SUBMIT BUTTON */
-.btn-submit {
+/* ==========================================
+   BUTTONS
+========================================== */
+.btn-outline, .btn-submit {
   width: 100%;
-  background-color: #19183B;
-  color: #E7F2EF;
-  padding: 10px;
+  padding: 12px;
   font-size: 1.1em;
-  border: none;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: #19183B;
+  transform: translateY(-3px);
+}
+
+.btn-submit {
+  background-color: #19183B;
+  color: #E7F2EF;
+  border: none;
 }
 
 .btn-submit:hover {
@@ -215,17 +228,49 @@ input:focus, select:focus, textarea:focus {
   transform: translateY(-3px);
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+========================================== */
 footer {
-  background-color: #19183B;
-  color: #E7F2EF;
+  background:  #4D73C0(35, 167, 48, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   text-align: center;
   padding: 20px;
-  margin-top: 60px;
+  font-size: 0.95em;
+}
+.footer:hover {     
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ANIMATION */
+/* ==========================================
+   ANIMATIONS
+========================================== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .consultation-hero h1 {
+    font-size: 2.2em;
+  }
+
+  .form-container {
+    width: 95%;
+  }
 }

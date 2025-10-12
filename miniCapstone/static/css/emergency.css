@@ -1,249 +1,175 @@
-/*GLOBAL*/
+:root {
+  --white-glass: rgba(255, 255, 255, 0.15);
+  --radius: 14px;
+}
+
+/* GENERAL */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f5f7fb;
-  color: #333;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #1A2A5C 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+  );
+  background-attachment: fixed;
 }
 
-.container {
-  display: flex;
-  min-height: 100vh;
-}
-
-/*Sidebar*/
-.sidebar {
-  width: 260px;
-  background-color: #2c3e50;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px 20px;
-}
-
-.profile-card {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.profile-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: url('https://via.placeholder.com/90') center/cover no-repeat;
-  margin: 0 auto 10px;
-  border: 3px solid #27ae60;
-}
-
-.name {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.role {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  text-transform: capitalize;
-}
-
-/*Sidebar Menu*/
-.menu {
-  display: flex;
-  flex-direction: column;
+/* HEADER */
+header {
   width: 100%;
-  gap: 10px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+    background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
 }
 
-.menu button {
-  background: none;
-  border: none;
-  color: white;
-  text-align: left;
-  font-size: 0.95rem;
-  padding: 12px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background 0.3s ease;
-}
-
-.menu button:hover,
-.menu button.active {
-  background-color: #27ae60;
-}
-
-/*Quick Consultation*/
-.quick-consultation {
-  margin-top: auto;
-  text-align: center;
-  background: #34495e;
-  border-radius: 10px;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #ecf0f1;
-}
-
-.quick-consultation p {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-/*Main Content*/
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/*Navbar*/
-.navbar {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 15px 30px;
-  border-bottom: 2px solid #eaeaea;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-links a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #27ae60;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
+  padding: 15px 8%;
   gap: 20px;
 }
 
-.notif-count {
-  background: #e74c3c;
-  color: white;
-  border-radius: 50%;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  position: relative;
-  top: -10px;
-  right: 15px;
-}
-
-.profile-dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
-  font-weight: 500;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.profile-dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 15px;
-  color: #333;
+.brand {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  transition: background 0.3s;
 }
 
-.dropdown-menu a:hover {
-  background: #f1f1f1;
+/* Logo Styling */
+.header-logo {
+  height: 70px;
+  width: auto;
+  margin-right: auto; /* ✅ pushes logo to the right side */
+  transition: transform 0.3s ease;
 }
 
-/*Emergency Section*/
-.emergency-section {
-  padding: 40px 50px;
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-actions .btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.nav-actions .btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: #1A2A5C;
+}
+
+/* MAIN SECTION */
+.main {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .emergency-section h2 {
-  color: #27ae60;
   font-size: 2rem;
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .emergency-section p {
-  color: #555;
-  margin-bottom: 30px;
-  font-size: 1rem;
+  color: #E8F4EE;
+  margin-bottom: 40px;
 }
 
-/*Emergency Cards*/
+/* EMERGENCY CARDS */
 .emergency-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .emergency-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  text-align: center;
+  background: var(--white-glass);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
   padding: 25px;
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
 }
 
 .emergency-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .emergency-card i {
-  font-size: 2rem;
-  color: #27ae60;
+  font-size: 2.2rem;
   margin-bottom: 10px;
+  color: #C1F1CF;
 }
 
 .emergency-card h3 {
   margin: 10px 0 5px;
-  color: #2c3e50;
+  font-size: 1.2rem;
 }
 
 .emergency-card p {
-  color: #555;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: #E6F7EC;
   margin-bottom: 15px;
 }
 
-/*Call Button*/
+/* CALL BUTTON */
 .call-btn {
   display: inline-block;
-  background: #27ae60;
-  color: white;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
   text-decoration: none;
   padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.3s;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: 2px solid #fff;
 }
 
 .call-btn:hover {
-  background: #219150;
+  background: #fff;
+  color: #1A2A5C;
+}
+
+/* FOOTER */
+footer {
+  background:  #4D73C0(35, 167, 48, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95em;
+}
+.footer:hover {
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
 }
