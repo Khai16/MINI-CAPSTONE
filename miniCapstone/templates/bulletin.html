@@ -11,9 +11,15 @@
 <body>
   <header class="header">
     <nav class="header-container fade-down">
-      <a class="brand" href="{{ url_for('homepage_page') }}">PHINMA UI iCare</a>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="{{ url_for('dashboard_page') }}">Dashboard</a>
+      <div class="nav-left">
+        <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}"
+             alt="University of Iloilo Logo"
+             class="header-logo">
+      </div>
+
+      <div class="nav-right">
+        <a href="{{ url_for('signup_page') }}" class="btn btn-outline">Sign Up</a>
+        <a href="{{ url_for('login_page') }}" class="login-button">Log In</a>
       </div>
     </nav>
   </header>
@@ -62,7 +68,6 @@
     <p>&copy; 2025 PHINMA University of Iloilo iCare System</p>
   </footer>
 
-  <!-- ✅ JS FILTER + ANIMATION -->
   <script>
     const categoryFilter = document.getElementById('categoryFilter');
     const searchInput = document.getElementById('searchInput');
@@ -91,7 +96,6 @@
     categoryFilter.addEventListener('change', filterBulletins);
     searchInput.addEventListener('input', filterBulletins);
 
-    // Reveal animations on load
     window.addEventListener('load', () => {
       document.querySelectorAll('.fade-card').forEach((card, i) => {
         setTimeout(() => card.classList.add('visible'), i * 100);

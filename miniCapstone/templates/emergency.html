@@ -5,105 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Emergency Contact | PHINMA UI iCare</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/emergency.css') }}">
 </head>
 <body>
-  <div class="container">
+  <!-- Header -->
+ <header class="header">
+  <nav class="header-container">
+    <a class="brand" href="{{ url_for('homepage_page') }}"></a>
+    <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}"
+    alt="University of Iloilo Logo"
+    class="header-logo">
+    <div class="nav-actions">
+      <a class="btn" href="{{ url_for('dashboard_page') }}">Dashboard</a>
+    </div>
+  </nav>
+</header>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-card">
-        <div class="profile-img"></div>
-        <p class="name"></p>
-        <span class="role">student</span>
+  <!-- Emergency Contact Section -->
+  <main class="main">
+    <section class="emergency-section">
+      <h2>🚨 Emergency Contacts</h2>
+      <p>If you need immediate help, contact any of the services below.</p>
+
+      <div class="emergency-grid">
+        <div class="emergency-card">
+          <i class="fas fa-ambulance"></i>
+          <h3>Ambulance</h3>
+          <p>Immediate medical emergency response</p>
+          <a href="tel:911" class="call-btn"><i class="fas fa-phone"></i> Call 911</a>
+        </div>
+
+        <div class="emergency-card">
+          <i class="fas fa-hospital"></i>
+          <h3>PHINMA UI Clinic</h3>
+          <p>For on-campus medical emergencies</p>
+          <a href="tel:+639123456789" class="call-btn"><i class="fas fa-phone"></i> Call Clinic</a>
+        </div>
+
+        <div class="emergency-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Campus Security</h3>
+          <p>Report safety or security incidents</p>
+          <a href="tel:+639876543210" class="call-btn"><i class="fas fa-phone"></i> Call Security</a>
+        </div>
+
+        <div class="emergency-card">
+          <i class="fas fa-user-nurse"></i>
+          <h3>Guidance Office</h3>
+          <p>For emotional or psychological support</p>
+          <a href="tel:+639556677888" class="call-btn"><i class="fas fa-phone"></i> Call Guidance</a>
+        </div>
       </div>
-      <nav class="menu">
-        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-tachometer-alt"></i> Student dashboard</button>
-        <button onclick="window.location.href='medical-records.html'"><i class="fas fa-notes-medical"></i> Medical records</button>
-        <button onclick="window.location.href='ai-assistant.html'"><i class="fas fa-robot"></i> AI Chat Assistant</button>
-        <button class="active" onclick="window.location.href='emergency.html'"><i class="fas fa-phone-alt"></i> Emergency Contact</button>
-        <button onclick="window.location.href='symptom-checker.html'"><i class="fas fa-stethoscope"></i> Symptom Checker</button>
-        <button onclick="window.location.href='feedback.html'"><i class="fas fa-comment-dots"></i> Feedback</button>
-      </nav>
-      <div class="quick-consultation">
-        <p>Quick Consultation</p>
-        <span>Connect with a healthcare professional instantly</span>
-      </div>
-    </aside>
+    </section>
+  </main>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <header class="navbar">
-        <div class="nav-links">
-          <a href="#">HOME</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">EMERGENCY CONTACT</a>
-          <a href="#">HEALTH BULLETIN</a>
-          <a href="#">FEEDBACK</a>
-        </div>
-        <div class="nav-right">
-          <i class="fas fa-bell"></i><span class="notif-count">3</span>
-          <div class="profile-dropdown">
-            <button class="dropdown-toggle"><i class="fas fa-user"></i></button>
-            <div class="dropdown-menu">
-              <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
-              <a href="#"><i class="fas fa-moon"></i> Dark mode</a>
-              <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <!-- Emergency Contact Section -->
-      <section class="emergency-section fade-in">
-        <h2>🚨 Emergency Contacts</h2>
-        <p>If you need immediate help, contact any of the services below.</p>
-
-        <div class="emergency-grid">
-          <div class="emergency-card fade-in-up">
-            <i class="fas fa-ambulance pulse"></i>
-            <h3>Ambulance</h3>
-            <p>Immediate medical emergency response</p>
-            <a href="tel:911" class="call-btn glow"><i class="fas fa-phone"></i> Call 911</a>
-          </div>
-
-          <div class="emergency-card fade-in-up">
-            <i class="fas fa-hospital pulse"></i>
-            <h3>PHINMA UI Clinic</h3>
-            <p>For on-campus medical emergencies</p>
-            <a href="tel:+639123456789" class="call-btn glow"><i class="fas fa-phone"></i> Call Clinic</a>
-          </div>
-
-          <div class="emergency-card fade-in-up">
-            <i class="fas fa-shield-alt pulse"></i>
-            <h3>Campus Security</h3>
-            <p>Report safety or security incidents</p>
-            <a href="tel:+639876543210" class="call-btn glow"><i class="fas fa-phone"></i> Call Security</a>
-          </div>
-
-          <div class="emergency-card fade-in-up">
-            <i class="fas fa-user-nurse pulse"></i>
-            <h3>Guidance Office</h3>
-            <p>For emotional or psychological support</p>
-            <a href="tel:+639556677888" class="call-btn glow"><i class="fas fa-phone"></i> Call Guidance</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    // Simple scroll animation trigger
-    const cards = document.querySelectorAll('.fade-in-up');
-    window.addEventListener('scroll', () => {
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          card.classList.add('visible');
-        }
-      });
-    });
-  </script>
+  <footer class="footer">
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System</p>
+  </footer>
 </body>
 </html>

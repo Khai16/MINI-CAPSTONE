@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/AboutUs.css') }}">
 </head>
-<body>
+<body>  
   <header class="header">
     <nav class="header-container">
-      <a class="brand" href="{{ url_for('homepage_page') }}">PHINMA UI iCare</a>
+          <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}"
+          alt="University of Iloilo Logo"
+          class="header-logo">
+      <a class="brand" href="{{ url_for('homepage_page') }}"></a>
       <div class="nav-actions">
         <a class="btn btn-outline" href="{{ url_for('dashboard_page') }}">Dashboard</a>
       </div>
@@ -48,33 +51,6 @@
             <li><i class="fas fa-bullhorn"></i> Health Bulletins and Announcements</li>
             <li><i class="fas fa-phone-alt"></i> Quick Emergency Contacts</li>
           </ul>
-        </div>
-
-        <div class="about-image">
-          <img src="{{ url_for('static', filename='images/health_team.svg') }}" alt="Healthcare team illustration">
-        </div>
-      </div>
-    </section>
-
-    <section class="team-section">
-      <h2>Meet Our Team</h2>
-      <p class="team-intro">The passionate individuals behind the PHINMA UI iCare system.</p>
-
-      <div class="team-grid">
-        <div class="team-card">
-          <img src="{{ url_for('static', filename='images/team1.jpg') }}" alt="Team member 1">
-          <h3>Denmark Osano</h3>
-          <p>Lead Developer</p>
-        </div>
-        <div class="team-card">
-          <img src="{{ url_for('static', filename='images/team2.jpg') }}" alt="Team member 2">
-          <h3>Wayne Azellus</h3>
-          <p>UI/UX Designer</p>
-        </div>
-        <div class="team-card">
-          <img src="{{ url_for('static', filename='images/team3.jpg') }}" alt="Team member 3">
-          <h3>PHINMA Clinic Staff</h3>
-          <p>Health Advisors</p>
         </div>
       </div>
     </section>

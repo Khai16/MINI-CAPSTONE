@@ -13,12 +13,6 @@
         <div class="nav-left">
             <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
         </div>
-        <div class="nav-center">
-            <ul class="nav-links">
-                <li><a href="{{ url_for('health_bulletin_page') }}">Bulletin</a></li>
-                <li><a href="{{ url_for('aboutUs_page') }}">About Us</a></li>
-            </ul>
-        </div>
 
         <div class="nav-right">
             <a href="{{ url_for('signup_page') }}" class="btn btn-outline">Sign Up</a>
@@ -32,15 +26,12 @@
         <section class="hero consultation-hero">
             <div class="hero-content">
                 <h1>Online Consultation Form</h1>
-                <p>
-                    Skip the long queues — share how you're feeling and our campus healthcare team will assist you digitally.
-                </p>
             </div>
-        </section>
+        </section>  
     <!--Container-->
             <section class="consultation-form-section">
             <div class="form-container">
-                <h2>Health3 Consultation Details</h2>
+                <h2>Health Consultation Details</h2>
                 <form action="#" method="post" class="consultation-form">
                     <div class="form-group">
                         <label for="name">Full Name</label>
