@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
 </head>
 <body>
-    <header>
-        <nav>
-            <a class="logo" href="{{ url_for('homepage_page') }}">PHINMA UI iCare</a>
-            <ul>
-                <li><a href="{{ url_for('dashboard_page') }}">Dashboard</a></li>
-                <li><a href="{{ url_for('medical_records_page') }}">Records</a></li>
-                <li><a href="{{ url_for('health_bulletin_page') }}">Bulletin</a></li>
-                <li><a href="{{ url_for('consultation_page') }}">Consultation</a></li>
-                <li><a href="{{ url_for('form_page') }}">Form</a></li>
-                <li><a href="{{ url_for('symptom_checker_page') }}">Symptom Checker</a></li>
-                <li><a href="{{ url_for('emergency_contacts_page') }}">Emergency</a></li>
-                <li><a href="{{ url_for('feedback_page') }}">Feedback</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Homepage</h1>
-        <p>Quick links to platform features above.</p>
-        <p><a href="{{ url_for('landing_page') }}">Back to Welcome</a></p>
-    </main>
-</body>
-</html> 
+  <header class="header">
+    <nav class="header-container">
+        <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}"
+        alt="University of Iloilo Logo"
+        class="header-logo">
+      <a href="{{ url_for('homepage_page') }}" class="brand"></a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('dashboard_page') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('medical_records_page') }}">Records</a></li>
+        <li><a href="{{ url_for('health_bulletin_page') }}">Bulletin</a></li>
+        <li><a href="{{ url_for('consultation_page') }}">Consultation</a></li>
+        <li><a href="{{ url_for('form_page') }}">Form</a></li>
+        <li><a href="{{ url_for('symptom_checker_page') }}">Symptom Checker</a></li>
+        <li><a href="{{ url_for('emergency_contacts_page') }}">Emergency</a></li>
+        <li><a href="{{ url_for('feedback_page') }}">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="homepage">
+  <section class="hero">
+    <!-- Logo centered in body -->
+    <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}"
+         alt="PHINMA UI iCare Logo"
+         class="ui-logo">
+
+    <h1>Welcome to PHINMA UI iCare</h1>
+    <p>Your all-in-one campus health assistance platform.</p>
+
+    <a href="{{ url_for('dashboard_page') }}" class="btn">Go to Dashboard</a>
+  </section>
+</main>
