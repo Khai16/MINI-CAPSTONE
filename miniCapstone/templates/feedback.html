@@ -1,61 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feedback | PHINMA UI iCare</title>
-  <link rel="stylesheet" href="feedback.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feedback.css">
+    <title>Welcome - PHINMA UI iCare</title>
 </head>
 <body>
-  <div class="container">
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-card">
-        <div class="profile-img"></div>
-        <p class="name"></p>
-        <span class="role">student</span>
-      </div>
-      <nav class="menu">
-        <button onclick="window.location.href='dashboard.html'"><i class="fas fa-tachometer-alt"></i> Student dashboard</button>
-        <button onclick="window.location.href='medical-records.html'"><i class="fas fa-notes-medical"></i> Medical records</button>
-        <button onclick="window.location.href='ai-assistant.html'"><i class="fas fa-robot"></i> AI Chat Assistant</button>
-        <button onclick="window.location.href='symptom-checker.html'"><i class="fas fa-stethoscope"></i> Symptom checker</button>
-      </nav>
-      <div class="quick-consultation">
-        <p>Quick Consultation</p>
-        <span>Connect with a healthcare professional instantly</span>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <header class="navbar">
-        <div class="nav-links">
-          <a href="#">HOME</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">EMERGENCY CONTACT</a>
-          <a href="#">HEALTH BULLETIN</a>
-          <a href="#">FEEDBACK</a>
+        
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+            <img src="phinmaLogo.jpg" alt="Header Logo">
         </div>
-        <div class="nav-right">
-          <i class="fas fa-bell"></i><span class="notif-count">3</span>
-          <div class="profile-dropdown">
-            <button class="dropdown-toggle"><i class="fas fa-user"></i> Denmark Osano</button>
-            <div class="dropdown-menu">
-              <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
-              <a href="#"><i class="fas fa-moon"></i> Dark mode</a>
-              <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </div>
-          </div>
+
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href='homepage_page'>Home</a></li>
+                <li><a href='health_bulletin_page'>Bulletin</a></li>
+                <li><a href='aboutUs_page'>About Us</a></li>
+            </ul>
         </div>
-      </header>
 
-      <!-- Feedback Section -->
-      <section class="feedback-section fade-in">
-        <h2>💬 We value your feedback!</h2>
-        <p>Please share your thoughts about your experience with PHINMA UI iCare.</p>
+    </nav>
+</header>
+    <!-- Feedback Section -->
+    <section class="feedback-section fade-in">
+        <section class="hero">
+        <div class="feedback-header">
+            <h2>Share Your Experience</h2>
+            <p class="feedback-subtitle">Your feedback helps us improve and provide better service</p>
+        </div>
+        <div class="feedback-form">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
         <form action="#" method="post" class="feedback-form fade-in-up">
           <div class="rating">
             <label>
@@ -79,13 +65,17 @@
               <span class="emoji">😍</span>
             </label>
           </div>
-
-          <textarea name="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
-          
-          <button type="submit"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
-        </form>
+          <div class="form-group">
+                    <label for="feedback">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" required></textarea>
+                </div>
+         <button type="submit" class="submit-btn">Submit Feedback</button>
       </section>
+       <footer>
+            <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+        </footer>
     </main>
   </div>
 </body>
 </html>
+
