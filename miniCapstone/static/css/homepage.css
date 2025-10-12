@@ -1,156 +1,204 @@
-/*GLOBAL STYLES*/
+/* ==============================
+   GLOBAL STYLES
+============================== */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    color: #0d47a1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    135deg,
+    #1A2A5C 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+  );
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-/*HEADER & NAVBAR*/
-header {
-    background-color: #0d47a1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* ==============================
+   HEADER
+============================== */
+.header {
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 20px 8%;
+  border: none; /* ✅ Removes dividing line */
+  box-shadow: none; /* ✅ Removes shadow blur */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease;
+.brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-nav .logo:hover {
-    transform: scale(1.05);
+.brand:hover {
+  transform: scale(1.05);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+.header-logo {
+  height: 70px; /* smaller to fit nicely */
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #e3f2fd;
-    font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
-    position: relative;
+.header-logo:hover {
+  transform: scale(1.05);
+}
+/* NAVIGATION LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-/*animation on hover*/
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #ffca28;
-    transition: width 0.3s ease;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FFD56F;
+  transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #ffca28;
-    transform: scale(1.05);
+.nav-links a:hover {
+  color: #FFD56F;
 }
 
-/*MAIN CONTENT*/
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    animation: fadeIn 1.2s ease;
-    padding: 4rem 2rem;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-main h1 {
-    font-size: 2.5rem;
-    color: #0d47a1;
-    margin-bottom: 1rem;
-    animation: slideDown 0.8s ease forwards;
+/* ==============================
+   MAIN SECTION
+============================== */
+.homepage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 1.2s ease;
 }
 
-main p {
-    font-size: 1.1rem;
-    color: #1565c0;
-    margin: 0.5rem 0;
-    max-width: 600px;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/*LINK BUTTON*/
-main a {
-    display: inline-block;
-    margin-top: 1.5rem;
-    background-color: #0d47a1;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(13, 71, 161, 0.3);
+/* Title and text */
+.hero h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-main a:hover {
-    background-color: #1565c0;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(13, 71, 161, 0.4);
+/* Centered Logo */
+.ui-logo {
+  width: 220px;
+  height: auto;
+  margin: 1.5rem 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
 }
 
-/*ANIMATIONS*/
+.ui-logo:hover {
+  transform: scale(1.05);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #f7f7f7;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.4);
+  color: #1A2A5C;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ==============================
+   ANIMATIONS
+============================== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/*RESPONSIVE DESIGN*/
+/* ==============================
+   RESPONSIVE
+============================== */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 2rem;
-    }
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 10px;
+  }
 
-    main h1 {
-        font-size: 2rem;
-    }
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-    main p {
-        font-size: 1rem;
-    }
+  .hero p {
+    font-size: 1rem;
+  }
 }
