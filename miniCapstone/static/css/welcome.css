@@ -1,6 +1,4 @@
-/* ===================================
-   GLOBAL STYLES
-=================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +7,21 @@
 }
 
 body {
-  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* soft mint background */
-  color: #19183B; /* deep navy text */
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
   font-size: 1em;
+  min-height: 90vh;
   overflow-x: hidden;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
 }
 
 /* ===================================
@@ -21,66 +29,90 @@ body {
 =================================== */
 header {
   width: 100%;
-  background: linear-gradient(to right, #E7F2EF, #9fd5cd); /* elegant mint gradient */
-  box-shadow: 0 4px 10px rgba(161, 194, 189, 0.6);
-  padding: 15px 0;
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.4s ease;
+  backdrop-filter: blur(10px);
+    background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
 }
 
-
-
-header:hover {
-  background: linear-gradient(to right, #E7F2EF, #A1C2BD); /* subtle hover tint */
+.header:hover {
+  padding: 10px 0;
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
 
 
 .header-container {
+  height: 60px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px; 
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
 }
-
 /* LOGO (left side) */
 .nav-left img {
-  vertical-align: middle;
-  align-items: left;
-  height: 55px;
-  width: 200px;
-  border-radius: 9px;
-  transition: transform 0.3s ease;
+  width: 90px;
+  height: 75px;
+  border-radius: 15px;
 }
-
 .nav-left img:hover {
   transform: scale(1.05);
 }
 
 /* NAVIGATION MENU (center) */
 .nav-links {
+  text-size-adjust: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 25px;
+  padding-block-end: 5px;
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.nav-links :hover {
+   color:#E1AA36;
+}
+
+.nav-link:hover::after {
+    transform-origin: left;
+    background: #5ef5cf;
 }
 
 .nav-links a {
+  color: #f9f9f9;
   text-decoration: none;
-  color: #19183B;
+  padding: 10px 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
   font-weight: 500;
-  font-size: 1em;
-  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #708993;
+.nav-link  a:hover {
+    transform-origin: left;
+    background: #E1AA36;
+
 }
+
 /* LOGIN BUTTON (right side) */
 .nav-right {
   display: flex;
@@ -92,20 +124,27 @@ header:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #19183B;
+  border: 1.5px solid;
   background: transparent;
-  color: #19183B;
-  padding: 8px 16px;
+  color: #f9f9f9;
+  padding: 10px 20px;
+  height: 45px;
   border-radius: 25px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
+
 .nav-right a:hover, .nav-right .login-button:hover {
-  background-color: #19183B;
-  color: #E7F2EF;
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(225, 170, 54, 0.5); 
 }
 
 
@@ -118,11 +157,17 @@ header:hover {
   gap: 60px;  
   align-items: center;         
   justify-content: left;                   
-  background: linear-gradient(to right, #E7F2EF,#9fd5cd);
-  padding: 130px 50px;
+   background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */  
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
+  padding: 100px 20px;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;        
+  min-height: 90vh;        
 }
 
 
@@ -138,48 +183,53 @@ header:hover {
   align-content: right;
 }
 .hero-logo {
+  max-width: 100%;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-   animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
   transition: rotate 1s ease;
 }
-.hero-logo.scrolled {
+.hero-logo.moving-image {
   transform: translateY(100px);
   transform: rotate(360deg);
 }
 .hero-logo.float-image {
   animation: float 3s ease-in-out infinite;
+  
 }
 
 .hero-logo img {
   align-content: right;
-  max-width: 1000%;
+  max-width: 800px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 11px;
   animation: translateY(100px);
   animation: rotate 3s ease-in-out;
 }
+.hero-logo.moving-image {
+  animation: moveDown 3s ease-in-out infinite;
+}
 
 .hero-content h1 {
-  font-style: Helvetica;
-  text-align: left;
-  font-size: 3.9em;
-  color: #19183B;
+  font-style: poppins;
+  text-align: right;
+  font-size: 75px;
+  color: #E1AA36;
   height: auto;
   width: auto;
-  font-weight: 550;
+  font-weight: 400;
   animation: fadeIn 2.5s ease-in-out;
 }
 
 .hero-content h2 {
   font-style: italic;
   font-size: 2.2em;
-  color: #8ca9b4;
+  color: #19183B;;
   margin: 10px 0;
   font-weight: 600;
-   text-align: left;
+  text-align: left;
 }
 
 .hero-content p {
@@ -190,7 +240,7 @@ header:hover {
 }
 
 .hero-buttons {
-align-items: left;
+  align-items: left;
   display: flex;
   gap: 30px;
   margin-top: 25px;
@@ -199,8 +249,10 @@ align-items: left;
 }
 
 .btn {
-  background-color: #19183B;
-  color: #E7F2EF;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  box-shadow: 0 0 10px  #4BBF73(225, 170, 54, 0.5);
   padding: 12px 25px;
   text-decoration: none;
   border-radius: 25px;
@@ -210,19 +262,19 @@ align-items: left;
 }
 
 .btn:hover {
-  background-color: #708993;
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
   transform: scale(1.05);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #19183B;
+  border: 2px solid  #E1AA36;
   color: #19183B;
 }
 
 .btn-outline:hover {
-  background: #19183B;
-  color: #E7F2EF;
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  transform: scale(1.05);
 }
 
 
@@ -242,7 +294,7 @@ align-items: left;
 }
 
 .features-header h2 {
-  color: #19183B;
+  color:#E1AA36;
   font-size: 2.5em;
   margin-bottom: 10px;
 }
@@ -254,7 +306,7 @@ align-items: left;
 }
 
 .features-subtitle {
-  color: #708993;
+  color: #19183B;
   margin-bottom: 40px;
 }
 
@@ -272,7 +324,13 @@ align-items: left;
 
 .feature-card {
   font-style:inherit;
-  background: linear-gradient(to right, #E7F2EF,#9fd5cd);
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */  
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
   padding: 50px;
   border-radius: 50px;
   box-shadow: 0 5px 15px #19183B;
@@ -284,7 +342,7 @@ align-items: left;
   align-items: center;
   height: 50px;
   background-color: #19183B;
-  color: #E7F2EF;
+  color: #19183B;
   padding: 15px 25px;
   text-decoration: none;
   border-radius: 25px;
@@ -294,7 +352,8 @@ align-items: left;
 }
 .feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(25, 24, 59, 0.15);
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  
 }
 
 
@@ -302,19 +361,25 @@ align-items: left;
   justify-content: baseline;
  padding: 25px 15px;
   height: 55Dpx;
-  color: #708993;
+  color: #19183B;
 }
 
 /* ===================================
    FOOTER
 =================================== */
 footer {
-  background: #171725;
-  color: #E7F2EF;
+  background:  #4D73C0(35, 167, 48, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   text-align: center;
   padding: 20px;
   font-size: 0.95em;
 }
+.footer:hover {
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
 
 /* ===================================
    ANIMATIONS
@@ -338,6 +403,13 @@ footer {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+@keyframes moveDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(50px); } /* Moves down 50px */
+  100% { transform: translateY(0); }
+}
+
+
 
 /* ===================================
    RESPONSIVE DESIGN
