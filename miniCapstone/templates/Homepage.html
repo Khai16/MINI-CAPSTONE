@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage | PHINMA UI iCare</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+    <title>Homepage | PHINMA UI iCare</title>
 </head>
 <body>
-  <header class="header">
+        
+<header>
     <nav class="header-container">
-        <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}"
-        alt="University of Iloilo Logo"
-        class="header-logo">
-      <a href="{{ url_for('homepage_page') }}" class="brand"></a>
-      <ul class="nav-links">
-        <li><a href="{{ url_for('dashboard_page') }}">Dashboard</a></li>
-        <li><a href="{{ url_for('medical_records_page') }}">Records</a></li>
-        <li><a href="{{ url_for('health_bulletin_page') }}">Bulletin</a></li>
-        <li><a href="{{ url_for('consultation_page') }}">Consultation</a></li>
-        <li><a href="{{ url_for('form_page') }}">Form</a></li>
-        <li><a href="{{ url_for('symptom_checker_page') }}">Symptom Checker</a></li>
-        <li><a href="{{ url_for('emergency_contacts_page') }}">Emergency</a></li>
-        <li><a href="{{ url_for('feedback_page') }}">Feedback</a></li>
-      </ul>
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+        </div>
+
+        <div class="nav-center">
+            <ul class="nav-links">
+               <li><a href="{{ url_for('dashboard_page') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('medical_records_page') }}">Records</a></li>
+            <li><a href="{{ url_for('health_bulletin_page') }}">Bulletin</a></li>
+            <li><a href="{{ url_for('consultation_page') }}">Consultation</a></li>
+            <li><a href="{{ url_for('form_page') }}">Form</a></li>
+            <li><a href="{{ url_for('emergency_contacts_page') }}">Emergency</a></li>
+            <li><a href="{{ url_for('feedback_page') }}">Feedback</a></li>
+            </ul>
+        </div>
+
     </nav>
-  </header>
+</header>
+        <div class="container"></div>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to PHINMA UI iCare</h1>
+                <h2> Your all-in-one campus health assistance </h2>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('consultation_page') }}" class="btn">Consult</a>
+                    <a href="{{ url_for('login_page') }}" class="btn btn-outline">Login</a>
+                </div>
+            </div>
+        </section>
 
-  <main class="homepage">
-  <section class="hero">
-    <!-- Logo centered in body -->
-    <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}"
-         alt="PHINMA UI iCare Logo"
-         class="ui-logo">
+        <section class="features">
+            <div class="features-list">
+                <div class="feature-card">
+                    <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+                    <p>know About PHINMA University of Iloilo iCare</p>
+                </div>
+                </div>
+                <div class="feature-card">
+                    <a href="{{ url_for('emergency_contacts_page') }}" class="btn btn-outline">Emergency Contacts</a>
+                    <p>Chat or call directly with the medical staff for quick assistance.</p>
+                </div>
+            </div>
+>
+        </section>
 
-    <h1>Welcome to PHINMA UI iCare</h1>
-    <p>Your all-in-one campus health assistance platform.</p>
-
-    <a href="{{ url_for('dashboard_page') }}" class="btn">Go to Dashboard</a>
-  </section>
-</main>
+        <footer>
+            <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
