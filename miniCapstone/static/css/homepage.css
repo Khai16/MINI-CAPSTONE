@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +5,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
 body {
   background: linear-gradient(
     135deg,
-    #202e5b 0%,   /* Deep Navy Blue */
-    #4D73C0 25%,  /* Light Blue */
-    #1E6946 60%,  /* Dark Green */
-    #4BBF73 100%   /* Mint Green */
+    
   );
   font-size: 1em;
   min-height: 90vh;
@@ -63,7 +60,7 @@ header {
 }
 /* LOGO (left side) */
 .nav-left img {
-  width: 50px;
+  width: 100px;
   height: 75px;
   border-radius: 15px;
 }
@@ -111,34 +108,6 @@ header {
 
 }
 
-/* LOGIN BUTTON (right side) */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-right a, .nav-right .login-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid;
-  background: transparent;
-  color: #f9f9f9;
-  padding: 10px 20px;
-  height: 45px;
-  border-radius: 25px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-
 .nav-right a:hover, .nav-right .login-button:hover {
   background: linear-gradient(135deg, #E1AA36, #239BA7);
   color: #fff;
@@ -147,10 +116,12 @@ header {
 
 
 
+
 /* ===================================
    HERO SECTION
 =================================== */
 .hero {
+  
   display: flex;   
   gap: 60px;  
   align-items: center;         
@@ -161,7 +132,9 @@ header {
     #4D73C0 25%,  /* Light Blue */
     #1E6946 60%,  /* Dark Green */
     #4BBF73 100%   /* Mint Green */
+    
   );
+  
   padding: 100px 20px;
   position: relative;
   overflow: hidden;
@@ -222,7 +195,7 @@ header {
   display: flex;
   gap: 30px;
   margin-top: 25px;
-  justify-content: left;
+  justify-content: center;
 
 }
 
@@ -428,4 +401,77 @@ footer {
     text-align: center ; /* center hero text on small screens */
     margin-left: 0;
   }
+}
+/* === MEDICAL PILL BACKGROUND IMAGE ANIMATION === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: url('med(1).png') 
+no-repeat center top;
+  background-size: 600px auto;
+  opacity: 0.25;           /* transparency */
+  z-index: -1;             /* keep behind everything */
+  animation: floatPill 1s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatPill {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+/* ========== HERO SECTION BACKGROUND (med.png) ========== */
+.hero {
+  background: ("med.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(32, 46, 91, 0.9) 0%,
+    rgba(77, 115, 192, 0.8) 25%,
+    rgba(30, 105, 70, 0.8) 60%,
+    rgba(75, 191, 115, 0.8) 100%
+  ),
+    /* capsules image background */
+   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px #19183B;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+ 
+  padding: 100px 20px;
+  min-height: 90vh;
+  position: relative;
+  overflow:;
+}
+
+/* ========== FEATURE CARD BACKGROUND (dical.png) ========== */
+.feature-card {
+  background: url("sample.png"),
+    linear-gradient(
+      135deg,
+      #202e5b 0%,
+      #4D73C0 25%,
+      #1E6946 60%,
+      #4BBF73 100%
+    );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px #19183B;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
 }
