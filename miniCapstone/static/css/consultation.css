@@ -1,0 +1,319 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+  );
+  font-size: 1em;
+  min-height: 95vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header {
+  width: 100%;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,
+    #4D73C0 25%,
+    #1E6946 60%,
+    #4BBF73 100%
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header:hover {
+  padding: 10px 0;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.header-container {
+   height: 60px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  max-width: 1300px; 
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/* LOGO */
+.nav-left img {
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  width: 90px;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+.nav-left img:hover {
+  transform: scale(1.05);
+}
+
+/* NAVIGATION RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* NAV LINKS + LOGIN BUTTON */
+.nav-right a, .login-button {
+  display: inline-flex;
+  align-items: right;
+  justify-content: right;
+  white-space: nowrap;  
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.nav-right a:hover, .nav-right .login-button:hover {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #fff;
+
+}
+
+/* ==========================================
+   HERO + FORM MERGED SECTION
+========================================== */
+.consultation-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 85px 20px 40px;
+}
+
+.consultation-hero h1 {
+  font-size: 2.8em;
+  color:#E1AA36;
+  margin-bottom: 40px;
+}
+
+/* ==========================================
+   CONSULTATION FORM
+========================================== */
+.consultation-form-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 95px;
+}
+
+.form-container {
+  backdrop-filter: blur(20px);
+  padding: 2.0rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 30px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  background: linear-gradient(135deg, #8f7335, #258f98);
+  transform: translateY(-3px);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #19183B;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* FORM FIELDS */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-decoration-color:#19183B ;
+}
+
+label {
+  text-decoration-color:#19183B ;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #19183B;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+input, select, textarea {
+  text-decoration-color:#504da4 ;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid  rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(247, 245, 245, 0.15);
+   color: #19183B;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.radio-group input{
+  color: #19183B;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.btn-outline{
+  display: inline;
+  font-size: 18x;
+  font-weight: 500;
+  gap: 20px;
+  border-radius: 15px;
+  background: transparent;
+  color: #19183B;
+}
+.btn-submit {
+  gap: 20px;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(225, 170, 54, 0.5);
+  transform: translateY(-3px);
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: white;
+  border: none;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #7ADAA5, #E1AA36);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(225, 170, 54, 0.4);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+footer {
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95em;
+}
+.footer:hover {     
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .consultation-hero h1 {
+    font-size: 2.2em;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .form-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .consultation-hero h1 {
+    font-size: 2rem;
+  }
+}

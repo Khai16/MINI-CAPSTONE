@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutUs.css') }}">
+</head>
+<body>  
+  <header>
+        <nav class="header-container">
+                <div class="nav-left">
+                  <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+                  <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
+                </div>
+        </nav>
+  </header>
+
+  <main>
+      <!-- WHO WE ARE TITLE -->
+          <section class="about-title">
+            <h2>Who We Are</h2>
+          </section>
+
+          <!-- MISSION & VISION CARDS -->
+          <section class="about-section">
+            <div class="about-card">
+              <h3>🎯Our Mission</h3>
+              <p>
+                To provide accessible, efficient, and compassionate healthcare services for every PHINMA UI student and staff, promoting wellness through modernized and paperless solutions.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <h3>🚀Our Vision</h3>
+              <p>
+                To become a leading model of smart campus healthcare—where technology and care meet to create a healthier, more responsive learning environment.
+              </p>
+            </div>
+          </section>
+
+        </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System</p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+     <title>Student Dashboard</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('homepage_page') }}">Home</a>
+            <a href="{{ url_for('medical_records_page') }}">Medical Records</a>
+            <a href="{{ url_for('health_bulletin_page') }}">Health Bulletin</a>
+            <a href="{{ url_for('consultation_page') }}">Consultation</a>
+            <a href="{{ url_for('emergency_contacts_page') }}">Emergency</a>
+            <a href="{{ url_for('feedback_page') }}">Feedback</a>
+        </nav>
+    </header>
+    <main>
+<!-- Left Sidebar Navigation -->
+<section class="hero dashboard-hero">
+    <div class="hero-content">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Monitor your health, track appointments, and access medical services all in one place!</p>
+        <div class="hero-buttons">
+             <a href="{{ url_for('emergency_contacts_page') }}" class="btn btn-outline">Emergency Contacts</a>
+        </div>
+    </div>
+</section>
+
+<section class="spots dashboard-cards">
+    <div class="spots-header">
+        <h2>Your Health Overview</h2>
+        <p class="spots-subtitle">Quick access to your health information and upcoming appointments.</p>
+    </div>
+    <div class="spot-list">
+        <div class="spot-card dashboard-card">
+            <div class="card-icon">📅</div>
+            <h3>Upcoming Appointments</h3>
+            <p class="card-number">2</p>
+            <p></p>
+        </div>
+        <div class="spot-card dashboard-card">
+            <div class="card-icon">💊</div>
+            <h3>Medications</h3>
+            <p class="card-number">3</p>
+            <p>Active prescriptions and daily reminders</p>
+        </div>
+        <div class="spot-card dashboard-card">
+            <div class="card-icon">📊</div>
+            <h3>Health Score</h3>
+            <p class="card-number">85%</p>
+            <p>Based on recent checkups and activities</p>
+        </div>
+    </div>
+</section>
+
+<section class="spots recent-activity">
+    <div class="spots-header">
+        <h2>Recent Activity</h2>
+        <p class="spots-subtitle">Your latest health consultations and medical interactions.</p>
+    </div>
+    <div class="spot-list">
+        <div class="spot-card activity-card">
+            <div class="activity-date">Jan 5, 2025</div>
+            <h3>General Checkup</h3>
+            <p>Consultation with Dr. Maria Santos - All vitals normal, continue current medication.</p>
+        </div>
+        <div class="spot-card activity-card">
+            <div class="activity-date">Jan 3, 2025</div>
+            <h3>AI Health Chat</h3>
+            <p>Discussed headache symptoms - Recommended hydration and rest, follow-up if persists.</p>
+        </div>
+        <div class="spot-card activity-card">
+            <div class="activity-date">Dec 28, 2024</div>
+            <h3>Lab Results</h3>
+            <p>Blood test results uploaded - Cholesterol levels within normal range.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 PHINMA UI iCare | All Rights Reserved.</p>
+</footer>
+</body>
+</html>

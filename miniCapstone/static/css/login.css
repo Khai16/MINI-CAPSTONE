@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%  /* Mint Green */
+);
+  font-size: 1em;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+header {
+  width: 100%;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,
+    #4D73C0 25%,
+    #1E6946 60%,
+    #4BBF73 100%
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header:hover {
+  padding: 10px 0;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.header-container {
+   height: 60px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  max-width: 1300px; 
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/* LOGO */
+.nav-left img {
+  align-items: left;
+  justify-content: left;
+  height: 75px;
+  width: 90px;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+.nav-left img:hover {
+  transform: scale(1.05);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* NAV LINKS + LOGIN BUTTON */
+.nav-center a{
+  display: inline-flex;
+  align-items: right;
+  justify-content: right;
+  white-space: nowrap;  
+  border: 1px solid #19183B;
+  background: transparent;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+/* ACTIVE STATE */
+.nav-center a:hover {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #fff;
+}
+
+/* ================================
+   LOGIN SECTION
+================================ */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 160px 20px;
+}
+.login-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4.0rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover{
+   background: linear-gradient(135deg, #8c6e2e, #238a93);
+  transform: translateY(-3px);
+}
+
+.login-container h1 {
+  margin-bottom: 35px;
+  color: #19183B;
+  font-weight: 600;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 0.9px solid rgba(255,255,255,0.3);
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #19183B;
+  transition: all 0.3s ease;
+   text-decoration-color:#19183B ;
+}
+
+.input-box:hover{
+  background-color: #ffffff;
+}
+
+.input-box input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #19183B(225, 170, 54, 0.6);
+}
+
+/* LOGIN BUTTON */
+.btn-outline{
+  display: inline;
+  font-size: 18x;
+  font-weight: 500;
+  gap: 20px;
+  border-radius: 15px;
+  background: transparent;
+  color: #19183B;
+}
+.btn-submit {
+  gap: 20px;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #19183B;
+  box-shadow: 0 0 10px rgba(225, 170, 54, 0.5);
+  transform: translateY(-3px);
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+  color: #19183B;
+  border: none;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #7ADAA5, #E1AA36);
+  transform: translateY(-3px);
+}
+
+/* ================================
+   FOOTER (OPTIONAL)
+================================ */
+footer {
+  background: linear-gradient(
+    135deg,
+    #202e5b 0%,   /* Deep Navy Blue */  
+    #4D73C0 25%,  /* Light Blue */
+    #1E6946 60%,  /* Dark Green */
+    #4BBF73 100%   /* Mint Green */
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95em;
+}
+.footer:hover {
+  background: rgba(122, 218, 165, 0.85);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media screen and (max-width: 800px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(35, 155, 167, 0.95);
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
