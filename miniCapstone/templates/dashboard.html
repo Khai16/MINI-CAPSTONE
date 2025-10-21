@@ -4,84 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-     <title>Student Dashboard</title>
+    <title>Student Dashboard - PHINMA UI iCare</title>
 </head>
 <body>
-    <header>
-        <nav>
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+             <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="PHINMA UI Logo">
+             <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="iCare Logo">
+        </div>
+
+        <div class="nav-right nav-links">
             <a href="{{ url_for('homepage_page') }}">Home</a>
-            <a href="{{ url_for('medical_records_page') }}">Medical Records</a>
-            <a href="{{ url_for('health_bulletin_page') }}">Health Bulletin</a>
+            <a href="{{ url_for('medical_records_page') }}">Records</a>
+            <a href="{{ url_for('health_bulletin_page') }}">Bulletin</a>
             <a href="{{ url_for('consultation_page') }}">Consultation</a>
-            <a href="{{ url_for('emergency_contacts_page') }}">Emergency</a>
-            <a href="{{ url_for('feedback_page') }}">Feedback</a>
-        </nav>
-    </header>
-    <main>
-<!-- Left Sidebar Navigation -->
-<section class="hero dashboard-hero">
-    <div class="hero-content">
-        <h1>Welcome to Your Dashboard</h1>
-        <p>Monitor your health, track appointments, and access medical services all in one place!</p>
-        <div class="hero-buttons">
-             <a href="{{ url_for('emergency_contacts_page') }}" class="btn btn-outline">Emergency Contacts</a>
+            <a href="{{ url_for('emergency_contacts_page') }}" class="btn-outline">Emergency</a>
+            <a href="{{ url_for('feedback_page') }}" class="login-button">Feedback</a>
         </div>
-    </div>
-</section>
+    </nav>
+</header>
+<main>
+    <section class="hero dashboard-hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Dashboard</h1>
+            <h2>PHINMA UI iCare</h2>
+            <p>Monitor your health, track appointments, and access medical services all in one place!</p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('medical_records_page') }}" class="btn">View Records</a>
+                </div>
+        </div>
+         <div class="hero-logo">
+            <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Hero Logo">
+        </div>
+    </section>
 
-<section class="spots dashboard-cards">
-    <div class="spots-header">
-        <h2>Your Health Overview</h2>
-        <p class="spots-subtitle">Quick access to your health information and upcoming appointments.</p>
-    </div>
-    <div class="spot-list">
-        <div class="spot-card dashboard-card">
-            <div class="card-icon">📅</div>
-            <h3>Upcoming Appointments</h3>
-            <p class="card-number">2</p>
-            <p></p>
+    <section class="features dashboard-cards">
+        <div class="features-header">
+            <h2>Your Health Overview</h2>
+            <p class="features-subtitle">Quick access to your health information and upcoming appointments.</p>
         </div>
-        <div class="spot-card dashboard-card">
-            <div class="card-icon">💊</div>
-            <h3>Medications</h3>
-            <p class="card-number">3</p>
-            <p>Active prescriptions and daily reminders</p>
+        <div class="features-list">
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">📅</div>
+                <a href="#"><h3>Upcoming Appointments</h3></a> 
+                <p class="card-number">2</p>
+                <p>You have 2 appointments scheduled this week.</p>
+            </div>
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">💊</div>
+                 <a href="#"><h3>Active Medications</h3></a>
+                <p class="card-number">3</p>
+                <p>Active prescriptions and daily reminders.</p>
+            </div>
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">📊</div>
+                 <a href="#"><h3>Overall Health Score</h3></a>
+                <p class="card-number">85%</p>
+                <p>Based on recent checkups and activities.</p>
+            </div>
         </div>
-        <div class="spot-card dashboard-card">
-            <div class="card-icon">📊</div>
-            <h3>Health Score</h3>
-            <p class="card-number">85%</p>
-            <p>Based on recent checkups and activities</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="spots recent-activity">
-    <div class="spots-header">
-        <h2>Recent Activity</h2>
-        <p class="spots-subtitle">Your latest health consultations and medical interactions.</p>
-    </div>
-    <div class="spot-list">
-        <div class="spot-card activity-card">
-            <div class="activity-date">Jan 5, 2025</div>
-            <h3>General Checkup</h3>
-            <p>Consultation with Dr. Maria Santos - All vitals normal, continue current medication.</p>
+    <section class="features recent-activity">
+        <div class="features-header">
+            <h2>Recent Activity Log</h2>
+            <p class="features-subtitle">Your latest health consultations and medical interactions.</p>
         </div>
-        <div class="spot-card activity-card">
-            <div class="activity-date">Jan 3, 2025</div>
-            <h3>AI Health Chat</h3>
-            <p>Discussed headache symptoms - Recommended hydration and rest, follow-up if persists.</p>
+        <div class="features-list">
+            <div class="feature-card activity-card">
+                <p class="activity-date">Jan 5, 2025</p>
+                <h3>General Checkup</h3>
+                <p>Consultation with Dr. Maria Santos - All vitals normal, continue current medication.</p>
+                 <a href="{{ url_for('medical_records_page') }}" class="btn-outline">View Details</a>
+            </div>
+            <div class="feature-card activity-card">
+                <p class="activity-date">Jan 3, 2025</p>
+                <h3>AI Health Chat</h3>
+                <p>Discussed headache symptoms - Recommended hydration and rest, follow-up if persists.</p>
+                 <a href="{{ url_for('consultation_page') }}" class="btn-outline">Chat Again</a>
+            </div>
+            <div class="feature-card activity-card">
+                <p class="activity-date">Dec 28, 2024</p>
+                <h3>Lab Results Uploaded</h3>
+                <p>Blood test results uploaded - Cholesterol levels within normal range.</p>
+                 <a href="{{ url_for('medical_records_page') }}" class="btn-outline">View Results</a>
+            </div>
         </div>
-        <div class="spot-card activity-card">
-            <div class="activity-date">Dec 28, 2024</div>
-            <h3>Lab Results</h3>
-            <p>Blood test results uploaded - Cholesterol levels within normal range.</p>
-        </div>
-    </div>
-</section>
-
+    </section>
+</main>
 <footer>
-    <p>&copy; 2025 PHINMA UI iCare | All Rights Reserved.</p>
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
 </footer>
 </body>
 </html>
