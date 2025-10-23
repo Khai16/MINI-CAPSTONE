@@ -4,12 +4,13 @@ import pymysql
 
 app = Flask(__name__)
 
+
 connection =  pymysql.connect(
-            host='localhost',
-            user='root',
-            password='@Francisco1146',
-            database='medical',
-            cursorclass=pymysql.cursors.DictCursor
+        host='localhost',
+        user='root',
+        password='@Francisco1146',
+        database='medical',
+        cursorclass=pymysql.cursors.DictCursor
         )
 
 cursor = connection.cursor(pymysql.cursors.DictCursor)
@@ -26,7 +27,6 @@ def login_page():
 def aboutUs_page():
         return render_template("AboutUs.html")
 
-
 @app.route('/homepage') 
 def homepage_page():
         return render_template("Homepage.html")
@@ -39,13 +39,16 @@ def signup_page():
 def emergency_contacts_page():
         return render_template('emergency.html')
 
-
 @app.route("/home_page")
 def home_page():
         sql = "SELECT * FROM users"
         cursor.execute(sql)
         users = cursor.fetchall()
         return render_template("Homepage.html", users=users)
+
+@app.route("/consultation_page")
+def consultation_page():
+       return render_template("consultation.html")
 
 @app.route('/login_process', methods=['POST'])
 def login_process():
@@ -63,16 +66,19 @@ def login_process():
         
 @app.route('/signup_process', methods=['POST'])
 def signup_process():
-            username = request.form.get('username')
-            email = request.form.get('email')
-            password = request.form.get('password')
-            confirm_password = request.form.get('confirm_password')
-
-
-            sql = "INSERT INTO users (user_name, email, password)  VALUES (%s, %s, %s)"
-            cursor.execute(sql,(username, email, password))
-            connection.commit()
-            return redirect('login_page')
+        name = request.form.get('username')
+        gender = request.form.get('gender')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+         
+        if password == confirm_password:
+                sql = "INSERT INTO users (name, gender, email, password)  VALUES (%s, %s, %s, %s        )"
+                cursor.execute(sql,(name, gender, email, confirm_password))
+                connection.commit()
+                return redirect(url_for('login_page'))
+        else:
+               return redirect(url_for('signup_page'))
     # Feature pages
 @app.route('/dashboard_page', methods=['POST'])
 def dashboard_page():
@@ -81,12 +87,9 @@ def dashboard_page():
             return render_template('dashboard.html')
         return redirect(url_for('login_page'))
 
-
 @app.route('/records')
 def medical_records_page():
         return render_template('records.html')
-
-    # Health Bulletin page 
 
 @app.route('/bulletin')
 def health_bulletin_page():
@@ -114,18 +117,21 @@ def health_bulletin_page():
             b["day"] = dt.day
         return render_template('bulletin.html', bulletins=bulletins)
 
+@app.route('/consultation_process', methods=['POST'])
+def consultation_process():
+       name = request.form.get('name')
+       role = request.form.get('role')
+       feeling = request.form.get('feeling')
+       symptom = request.form.get('symptoms')
+       pain = request.form.get('urgency')
+       contact = request.form.get('contact')
 
-    # Consultation page with form handling
-@app.route('/consultation', methods=['GET', 'POST'])
-def consultation_page():
-        if request.method == 'POST':
-            name = request.form.get('name')
-            email = request.form.get('email')
-            message = request.form.get('message')
-            return render_template('consultation.html', success=True)
-
-        return render_template('consultation.html')
-
+       sql = "INSERT INTO consultations (name, role, mood, symptom, pain, contact) VALUES (%s, %s, %s, %s, %s, %s)"
+       cursor.execute(sql,(name, role, feeling, symptom, pain, contact))
+       connection.commit()
+       result = cursor.fetchall()
+       return redirect(url_for('home_page'))
+       print(result)
 
 @app.route('/feedback', methods=['POST'])
 def feedback_page():
