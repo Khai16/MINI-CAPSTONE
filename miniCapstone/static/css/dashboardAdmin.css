@@ -1,0 +1,298 @@
+  /* ========= GLOBAL STYLES=============== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #202e5b 0%, #4D73C0 25%, #1E6946 80%, #3c9c5e 100%);
+    color: #fff;
+    min-height: 99vh;
+    overflow-x: hidden;
+  }
+
+
+  /* ========SIDEBAR (Modern Gradient with Glow)========= */
+  .sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #202e5b 0%, #4D73C0 40%, #1E6946 80%, #358b53 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    z-index: 1000;
+  }
+
+  /* Header (with logos) */
+  .sidebar-header {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .sidebar-header img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #fcbd35, #25b5c3);
+    background-clip: text;         
+    color: transparent; 
+    font-weight: 700;
+    letter-spacing: 0.6px;
+  }
+
+  /* Navigation Links */
+  .sidebar-nav {
+    list-style: none;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sidebar-nav a {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #f9f9f9;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .sidebar-nav a i {
+    font-size: 1.1rem;
+  }
+
+  .sidebar-nav a:hover,
+  .sidebar-nav a.active {
+    background: linear-gradient(135deg, #E1AA36, #07def2);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(5px);
+  }
+
+  /* Footer (Profile + Logout) */
+  .sidebar-footer {
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-footer img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #E1AA36;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar-footer .admin-name {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #fff;
+  }
+
+  .logout-link {
+    display: inline-block;
+    color: #ff6969;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+
+  .logout-link:hover {
+    color: #fff;
+  }
+
+  /* =========================================================
+    MAIN CONTENT
+  ========================================================= */
+  .main-content {
+    flex: 1;
+    margin-left: 150px;
+    padding: 4rem 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8rem;
+  }
+
+  /* =========================================================
+    HERO SECTION
+  ========================================================= */
+  .hero {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fcbd35, #25b5c3);
+    background-clip: text;         
+    color: transparent; 
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+    color: #f5f5f5;
+  }
+
+  /* =========================================================
+    STATS CARDS
+  ========================================================= */
+  .stats-container {
+    flex-direction: row; 
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+  transform: translateY(-12px) scale(1.02);
+      box-shadow: 
+        0 20px 60px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #8f7335, #258f98);
+      box-shadow: 0 0 20px rgba(225, 170, 54, 0.5);
+  }
+
+  .stat-title {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 10px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fcbd35, #25b5c3);
+    background-clip: text;         
+    color: transparent; 
+  }
+
+  /* =============table================= */
+  .table-container {
+    width: 100%;
+    margin: 0 auto 4rem;
+    padding: 9rem;
+    border-radius: 20px;
+    max-height: 10%;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .table-container h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #E1AA36, #239BA7);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+  }
+
+  .admin-table {
+    width: 90%;
+    margin: 0 auto 4rem;
+    background: rgba(255,255,255,0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .admin-table th {
+    background: rgba(255,255,255,0.1);
+    color: #E1AA36;
+    text-align: left;
+    padding: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .admin-table td {
+    padding: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .admin-table tbody tr:hover {
+    background: rgba(255,255,255,0.1);
+    transition: background 0.3s;
+  }
+
+  /* =========================================================
+    FOOTER
+  ========================================================= */
+  footer {
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 0;
+    background: linear-gradient(135deg, #202e5b, #4D73C0, #1E6946);
+    color: #fff;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  /* =========================================================
+    RESPONSIVE DESIGN
+  ========================================================= */
+  @media (max-width: 992px) {
+    .main-content {
+      margin-left: 0;
+      padding: 2rem 1.5rem;
+    }
+
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
