@@ -12,25 +12,21 @@
               <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
               <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
           </div>
-
           <div class="nav-right">
               <a href="{{ url_for('emergency_contacts_page') }}" class="btn btn-outline">Contacts</a>
                <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
           </div>
       </nav>
   </header>
-
     <main class="page fade-in">
       <section class="bulletin-hero">
         <div class="hero-content">
           <h1>Health Bulletin</h1>
           <p>Stay informed with the latest events, announcements, and health tips from PHINMA UI iCare.</p>
         </div>
-
         <div class="hero-logo">
           <img src="{{ url_for('static', filename='images/medicalbulleten.jpg') }}" alt="Hero Logo">
         </div>
-
       <section class="bulletin-grid" id="bulletinGrid">
         {% for b in bulletins %}
         <article class="card fade-card" data-category="{{ b.category }}">
@@ -51,10 +47,8 @@
         {% endfor %}
       </section>
     </main>
-
       <footer>
               <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
         </footer>
-
   </body>
   </html>
