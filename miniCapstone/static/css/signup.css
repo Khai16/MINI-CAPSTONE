@@ -1,11 +1,9 @@
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-
   body {
       background: linear-gradient(
       135deg,
@@ -14,7 +12,6 @@
       #1E6946 60%,  /* Dark Green */
       #4BBF73 100%  /* Mint Green */
     );
-
     font-size: 1em;
     min-height: 100vh;
     overflow-x: hidden;
@@ -25,7 +22,6 @@
     color: #ffffff;
     position: relative;
   }
-
   body::before {
     content: '';
     position: fixed;
@@ -40,7 +36,6 @@
     pointer-events: none;
     z-index: -1;
   }
-
   /* ===================================
     HEADER
   =================================== */
@@ -64,13 +59,11 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
   .header:hover {
     padding: 10px 0;
     color: #ffffff;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   }
-
   .header-container {
     height: 60px;
     display: flex;
@@ -80,7 +73,6 @@
     margin: 0 auto;
     padding: 0 25px;
   }
-  /* LOGO (left side) */
   .nav-left img {
     width: 90px;
     height: 75px;
@@ -89,8 +81,6 @@
   .nav-left img:hover {
     transform: scale(1.05);
   }
-
-  /* NAVIGATION MENU (center) */
   .nav-links {
     text-size-adjust: inherit;
     display: flex;
@@ -105,12 +95,10 @@
   .nav-links :hover {
     color:#E1AA36;
   }
-
   .nav-link:hover::after {
       transform-origin: left;
       background: #5ef5cf;
   }
-
   .nav-links a {
     color: #f9f9f9;
     text-decoration: none;
@@ -123,20 +111,15 @@
     transform-origin: right;
     transition: transform 0.3s ease;
   }
-
   .nav-link  a:hover {
       transform-origin: left;
       background: linear-gradient(135deg, #E1AA36, #239BA7);
-
   }
-
-  /* LOGIN BUTTON (right side) */
   .nav-right {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-
   .nav-right a, .nav-right .login-button {
     display: inline-flex;
     align-items: center;
@@ -156,7 +139,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .nav-right a::before, .nav-right .login-button::before {
     content: '';
     position: absolute;
@@ -167,8 +149,6 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
   }
-
-
   .nav-right a:hover, .nav-right .login-button:hover {
     background: linear-gradient(135deg, #E1AA36, #239BA7);
     color: #fff;
@@ -177,7 +157,6 @@
       0 0 0 1px rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
   }
-
   .nav-right a:hover::before, .nav-right .login-button:hover::before {
     left: 100%;
   }
@@ -215,25 +194,21 @@
   text-decoration: none;
   letter-spacing: 0.5px;
 }
-
 .btn-outline:hover {
   background: linear-gradient(135deg, #E1AA36, #239BA7);
   box-shadow: 0 0 15px rgba(225, 170, 54, 0.5);
   transform: translateY(-3px);
 }
-
 .btn-submit {
   background: linear-gradient(135deg, #E1AA36, #239BA7);
   color: white;
   border: none;
 }
-
 .btn-submit:hover {
   background: linear-gradient(135deg, #7ADAA5, #E1AA36);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(225, 170, 54, 0.4);
 }
-
 /* ===================================
    FEEDBACK SECTION
 =================================== */
@@ -243,9 +218,6 @@
   margin-bottom: 2rem;
   color:  #19183B;
 }
-
-
-/* FORM CONTAINER */
 .feedback-form {
   padding: 2.0rem;
   width: 450px;
@@ -261,19 +233,16 @@
    background: linear-gradient(135deg, #8c6e2e, #238a93);
   transform: translateY(-3px);
 }
-
 .feedback-form h1{
   margin-bottom: 35px;
   color: #19183B;
   font-weight: 600;
 }
-
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
   color: #19183B;
 }
-
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
@@ -281,7 +250,6 @@
   font-weight: 500;
   font-size: 0.95rem;
 }
-
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -296,7 +264,6 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
 }
-
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
@@ -306,8 +273,6 @@
   box-shadow: 0 0 10px rgba(225, 170, 54, 0.6);
   background-color: #ffffff;
 }
-
-/* BUTTON */
 .submit-btn {
   width: 100%;
   padding: 1rem 2.5rem;
@@ -321,7 +286,6 @@
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
 }
-
 .submit-btn:hover {
   background: linear-gradient(135deg, #7ADAA5, #E1AA36);
   transform: translateY(-3px);
@@ -348,58 +312,68 @@ footer {
   color: #ffffff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
-
 /* ===================================
    RESPONSIVE
 =================================== */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    gap: 10px;
+    height: auto;
+    padding: 10px 25px;
   }
-
+  .nav-left {
+    padding-bottom: 5px;
+  }
   .nav-right {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
   }
-
-  .hero-content h1 {
-    font-size: 2.2em;
-  }
-
   .feedback-form {
-    width: 95%;
+    width: 90%;
     padding: 1.5rem;
   }
 }
-
-@media screen and (max-width: 800px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(35, 155, 167, 0.95);
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 20px;
-    text-align: center;
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95em;
   }
-
-  #menu-toggle:checked + .menu-icon + .nav-links {
-    display: flex;
+  .nav-left img {
+    width: 70px;
+    height: 55px;
   }
-
-  .nav-links li {
-    margin: 10px 0;
+  .nav-right a, .nav-right .login-button {
+    padding: 10px 18px;
+    height: 40px;
+    font-size: 0.9em;
   }
-
+  .hero {
+    padding: 80px 10px;
+  }
   .feedback-form {
-    padding: 2rem 1.5rem;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
   }
-
-  .feedback-header h2 {
-    font-size: 32px;
+  .feedback-form h1 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  .btn-submit {
+    padding: 0.8rem 2rem;
+    font-size: 1em;
+  }
+  footer {
+    padding: 15px;
+    font-size: 0.85em;
   }
 }
 /* ===================================
@@ -409,7 +383,6 @@ footer {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes moveBackground {
   0% {
     background-position: 0% 50%;
@@ -421,4 +394,3 @@ footer {
     background-position: 0% 50%;
   }
 }
-
