@@ -389,33 +389,117 @@
 /* ===================================
    RESPONSIVE
 =================================== */
-@media screen and (max-width: 800px) {
-  .nav-links {
-    display: none;
+@media (max-width: 768px) {
+  /* Stack header elements */
+  .header-container {
+    height: auto;
     flex-direction: column;
-    background: rgba(35, 155, 167, 0.95);
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px; 
+    gap: 10px;
   }
-
-  #menu-toggle:checked + .menu-icon + .nav-links {
-    display: flex;
+  
+  /* Adjust header buttons */
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
+  
+  /* Reduce general form padding on tablets */
   .feedback-form {
-    padding: 2rem 1.5rem;
+    max-width: 90%; /* Use more width */
+    padding: 2.5rem 2rem;
+  }
+  
+  .feedback-header h2 {
+    font-size: 40px;
+  }
+}
+
+/* Very Small Mobile Phones (e.g., 360px wide) */
+@media (max-width: 480px) {
+  
+  /* --- Header & Logo Adjustments --- */
+  .header-container {
+    padding: 10px 10px;
+  }
+  
+  .nav-left img {
+    width: 70px; /* Smaller logo */
+    height: 55px;
+  }
+  
+  .nav-right a, .nav-right .login-button {
+    padding: 10px 18px; 
+    height: 40px;
+    font-size: 0.85em;
+  }
+
+  /* --- Feedback Section --- */
+  .feedback-header {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 10px;
   }
 
   .feedback-header h2 {
-    font-size: 32px;
+    font-size: 2.2em; /* Significantly smaller title */
+  }
+  
+  .feedback-subtitle {
+    font-size: 1em; /* Smaller subtitle */
+  }
+
+  /* --- Form Container --- */
+  .feedback-form {
+    max-width: 100%; /* Take up nearly full screen width */
+    width: 95%; 
+    margin: 0 auto 2rem auto; /* Less margin */
+    padding: 1.5rem 1rem; /* Reduced padding inside the form */
+    border-radius: 20px;
+  }
+  
+  /* Input Fields */
+  .form-group label {
+    font-size: 0.9em;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 8px 10px; /* Reduced input padding */
+    font-size: 0.95rem;
+  }
+
+  /* Emoji Rating Section */
+  .rating {
+    gap: 8px; /* Reduce gap between emojis */
+    margin-bottom: 20px;
+  }
+  
+  .emoji {
+    font-size: 28px; /* Smaller emojis */
+  }
+  
+  .emoji:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    padding: 0.8rem 1.5rem; /* Reduced button size */
+    font-size: 1em;
+  }
+  
+  /* --- Background Image --- */
+  .hero-logo img {
+    max-width: 1000px; /* Allow the background image to shrink/scale */
+  }
+
+  /* --- Footer --- */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.75em;
   }
 }
 /* ===================================
