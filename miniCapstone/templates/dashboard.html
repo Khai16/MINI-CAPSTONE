@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <title>Student Dashboard - PHINMA UI iCare</title>
+</head>
+<body>
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+             <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="PHINMA UI Logo">
+             <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="iCare Logo">
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="hero dashboard-hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Dashboard</h1>
+            <h2>PHINMA UI iCare</h2>
+            <p>Monitor your health, track appointments, and access medical services all in one place!</p>
+           
+        </div>
+         <div class="hero-logo">
+            <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Hero Logo">
+        </div>
+    </section>
+
+    <section class="features dashboard-cards">
+        <div class="features-header">
+            <h2>Your Health Overview</h2>
+            <p class="features-subtitle">Quick access to your health information and upcoming appointments.</p>
+        </div>
+        <div class="features-list">
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">📅</div>
+                <a href="#"><h3>Upcoming Appointments</h3></a> 
+                <p class="card-number">2</p>
+                <p>You have 2 appointments scheduled this week.</p>
+            </div>
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">💊</div>
+                 <a href="#"><h3>Active Medications</h3></a>
+                <p class="card-number">3</p>
+                <p>Active prescriptions and daily reminders.</p>
+            </div>
+            <div class="feature-card dashboard-card">
+                <div class="card-icon">📊</div>
+                 <a href="#"><h3>Overall Health Score</h3></a>
+                <p class="card-number">85%</p>
+                <p>Based on recent checkups and activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features recent-activity">
+        <div class="features-header">
+            <h2>Recent Activity Log</h2>
+            <p class="features-subtitle">Your latest health consultations and medical interactions.</p>
+        </div>
+        <div class="features-list">
+            <div class="feature-card activity-card">
+                <p class="activity-date">Jan 5, 2025</p>
+                <h3>General Checkup</h3>
+                <p>Consultation with Dr. Maria Santos - All vitals normal, continue current medication.</p>
+            
+            </div>
+            <div class="feature-card activity-card">
+                <p class="activity-date">Jan 3, 2025</p>
+                <h3>AI Health Chat</h3>
+                <p>Discussed headache symptoms - Recommended hydration and rest, follow-up if persists.</p>
+            
+            </div>
+            <div class="feature-card activity-card">
+                <p class="activity-date">Dec 28, 2024</p>
+                <h3>Lab Results Uploaded</h3>
+                <p>Blood test results uploaded - Cholesterol levels within normal range.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+</footer>
+</body>
+</html>

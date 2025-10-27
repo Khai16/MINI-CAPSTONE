@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PHINMA UI iCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+
+
+<body>
+        <header>
+        <nav class="header-container">
+                <div class="nav-left">
+                  <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+                  <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
+                </div>
+        <div class="nav-right">
+                <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">AboutUs</a>
+                <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
+        </div>  
+        </nav>
+        </header>
+
+        <section class="hero">
+        <form action="/signup_process" method="post" class="feedback-form">
+                {% if error %}
+                <div class="error-message" style="color: #ae0808; margin-bottom: 1rem; text-align: center;">
+                    {{ error }}
+                </div>
+                {% endif %}
+                
+                <h1>SignUp</h1>
+
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Name" required>
+                </div>
+
+                 <div class="form-group">
+                    <label for="username">Gender</label>
+                    <input type="text" id="gender" name="gender" placeholder="Enter your Gender" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+
+               <button type="submit" class="btn-submit">Create your account</button>
+                    <p class="switch-text">Already have an account? 
+                     <a href="{{ url_for('login_page') }}" class="btn btn-outline">Log In</a>
+                </p>
+                </form>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 PHINMA UI iCare | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

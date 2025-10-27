@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consultation.css') }}">
+    <title>Welcome - PHINMA UI iCare</title>
+</head>
+<body>
+        
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+            <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
+        </div>
+
+        <div class="nav-right">
+            <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+            <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
+        </div>
+    </nav>
+</header>
+
+<!--HERO SECTION-->
+    <main>
+        <section class="hero consultation-hero">
+            <div class="hero-content">
+                <h1>Online Consultation Form</h1>
+            </div> 
+    <!--Container-->
+            <section class="consultation-form-section">
+            <div class="form-container">
+                <h2>Health Consultation Details</h2>
+                <form action="/consultation_process" method="post" class="consultation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">ROLE:</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty/Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feeling">How are you feeling today?</label>
+                        <select id="feeling" name="feeling" required>
+                            <option value="">Choose one</option>
+                            <option value="good">Good 😊</option>
+                            <option value="tired">Tired 😴</option>
+                            <option value="stressed">Stressed 😟</option>
+                            <option value="sick">Feeling Sick 🤒</option>
+                            <option value="anxious">Anxious 😔</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symptoms">Describe your symptoms or concerns</label>
+                        <textarea id="symptoms" name="symptoms" rows="5" placeholder="Write your health concern here..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Rate the pain you've</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="urgency" value="low"> Low</label>
+                            <label><input type="radio" name="urgency" value="medium"> Medium</label>
+                            <label><input type="radio" name="urgency" value="high" > High</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Contact Number or Email</label>
+                        <input type="text" id="contact" name="contact" placeholder="Enter your contact details" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Consultation Request</button>
+                    <p class="switch-text">Already have an account? <a href="{{ url_for('signup_page') }}" class="btn btn-outline">Sign Up</a></p>
+                </form>
+            </div>
+        </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PHINMA UI iCare | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
