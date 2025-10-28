@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1b2a4a 0%, #2f58a5 40%, #1E6946 80%, #3d975d 100%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 115, 192, 0.3), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(75, 191, 115, 0.25), transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ======================================================
+   NAVBAR (Same as Homepage)
+====================================================== */
+nav {
+  width: 100%;
+  background: linear-gradient(135deg, #1b2a4a 0%, #295195 50%, #1E6946 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-left img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.nav-left h2 {
+  color: #E1AA36;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+    box-shadow: 0 4px 15px rgba(77, 115, 192, 0.35);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: linear-gradient(135deg, #E1AA36, #239BA7);
+    color: #fff;
+    box-shadow: 
+      0 8px 25px rgba(77, 115, 192, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* PROFILE ICON & LOGOUT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #E1AA36;
+}
+
+.logout-link {
+  color: #ff5c5c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.logout-link:hover {
+  color: #E1AA36;
+}
+
+/* ======================================================
+   MAIN CONTENT
+====================================================== */
+.main-content {
+  flex: 1;
+  padding: 90px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  background: linear-gradient(135deg, #fcbd35, #aff8ff);
+   background-clip: text;         
+  color: transparent; 
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================================
+   PROFILE & CONSULTATION ROW
+====================================================== */
+.dashboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 5%;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Profile Section */
+.profile {
+  flex: 1;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.profile h2 {
+  color: #E1AA36;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th {
+  text-align: left;
+  color: #E1AA36;
+  width: 120px;
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+.user-table td {
+  color: #fff;
+  font-weight: 500;
+  padding: 6px 0;
+}
+
+/* Consultation History */
+.consultation-history {
+  flex: 2;
+  min-width: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.consultation-history h2 {
+  color: #E1AA36;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table thead {
+  background: linear-gradient(135deg, #175f66, #4D73C0);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.admin-table th {
+  color: #fff;
+  font-weight: 600;
+}
+
+.admin-table tbody tr {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+footer {
+  width: 100%;
+  background: linear-gradient(135deg, #1b2a4a, #295195, #1E6946);
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9em;
+  letter-spacing: 0.3px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+@media (max-width: 992px) {
+  .main-content {
+    padding: 40px 30px;
+  }
+
+  .dashboard-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

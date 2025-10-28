@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+  <div class="nav-container">
+    <div class="nav-left">
+        <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+             <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="{{ url_for('homepage_page') }}"><i class="fa-solid fa-house"></i> Homepage</a></li>
+      <li><a href="{{ url_for('consultation_page') }}"><i class="fa-solid fa-stethoscope"></i> New Consultation</a></li>
+      <li><a href="{{ url_for('feedback_page') }}"><i class="fa-solid fa-star"></i> Feedback</a></li>
+      <li><a href="{{ url_for('health_bulletin_page') }}"><i class="fa-solid fa-newspaper"></i> Bulletin</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <img src="{{ url_for('static', filename='images/user_profile.png') }}" alt="User Profile">
+      <div class="user-info">
+        <p class="admin-name">{{ user_name }}</p>
+        <a href="{{ url_for('login_page') }}" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</ a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+  <section class="hero">
+    <h1>Welcome back, {{ user_name }}!</h1>
+  </section>
+
+  <div class="dashboard-row">
+
+    <!-- USER PROFILE SECTION -->
+    {% if user_info %}
+    <section class="profile">
+      <h2>Your Profile Information</h2>
+      <table class="user-table">
+        <tr><th>Name:</th><td>{{ user_info.name }}</td></tr>
+        <tr><th>Gender:</th><td>{{ user_info.gender }}</td></tr>
+        <tr><th>Email:</th><td>{{ user_info.email }}</td></tr>
+      </table>
+    </section>
+    {% endif %}
+
+    <!-- CONSULTATION HISTORY -->
+    <section class="consultation-history">
+      <h2>Your Consultation History</h2>
+
+      {% if consultations %}
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>Role</th>
+            <th>Mood</th>
+            <th>Symptom</th>
+            <th>Urgency</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in consultations %}
+          <tr>
+            <td>{{ c.created_at.strftime('%b %d, %Y %I:%M %p') if c.created_at else 'N/A' }}</td>
+            <td>{{ c.role }}</td>
+            <td>{{ c.mood }}</td>
+            <td>{{ c.symptom }}</td>
+            <td>{{ c.pain }}</td>
+            <td>{{ c.contact }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p style="text-align:center; color:white;">No past consultations yet. Start one today!</p>
+      {% endif %}
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bulletin.css') }}">
+      <title>Welcome - PHINMA UI iCare</title>
+  </head>
+  <header>
+      <nav class="header-container">
+          <div class="nav-left">
+              <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+              <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
+          </div>
+
+          <div class="nav-right">
+              <a href="{{ url_for('emergency_contacts_page') }}" class="btn btn-outline">Contacts</a>
+               <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+          </div>
+      </nav>
+  </header>
+
+    <main class="page fade-in">
+      <section class="bulletin-hero">
+        <div class="hero-content">
+          <h1>Health Bulletin</h1>
+          <p>Stay informed with the latest events, announcements, and health tips from PHINMA UI iCare.</p>
+        </div>
+
+        <div class="hero-logo">
+          <img src="{{ url_for('static', filename='images/medicalbulleten.jpg') }}" alt="Hero Logo">
+        </div>
+
+      <section class="bulletin-grid" id="bulletinGrid">
+        {% for b in bulletins %}
+        <article class="card fade-card" data-category="{{ b.category }}">
+          <div class="card-date">
+            <span class="month">{{ b.month }}</span>
+            <span class="day">{{ b.day }}</span>
+          </div>
+          <div class="card-body">
+            <h3>{{ b.title }}</h3>
+            <p>{{ b.description }}</p>
+            <div class="card-actions">
+              <a class="link" href="#">{{ b.category | capitalize }}</a>
+            </div>
+          </div>
+        </article>
+        {% else %}
+        <p class="no-bulletins fade-in-delay">No bulletins available at the moment.</p>
+        {% endfor %}
+      </section>
+    </main>
+
+      <footer>
+              <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+        </footer>
+
+  </body>
+  </html>
