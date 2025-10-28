@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Booking | PHINMA UI iCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consultation.css') }}">
+</head>
+<body>
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+            <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="iCare Logo">
+        </div>
+
+        <div class="nav-right desktop-only">
+            <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+            <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
+        </div>
+
+        <button class="menu-toggle mobile-only">▸</button>
+    </nav>
+
+    <div class="mobile-menu mobile-only">
+        <a href="{{ url_for('aboutUs_page') }}">About Us</a>
+        <a href="{{ url_for('emergency_contacts_page') }}">Contacts</a>
+    </div>
+</header>
+
+<section class="login-section">
+    <div class="login-container consultation-container">
+        <h1>Book a Consultation</h1>
+        <p class="feedback-subtitle">Schedule a time to meet with a counselor or staff member.</p>
+        
+        <form action="/consultation_process" method="POST">
+            {% if message %}
+                <div class="success-message">{{ message }}</div> 
+            {% endif %}
+            
+            <div class="input-box">
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name (Student/Staff)" required>
+            </div>
+            
+            <div class="input-box">
+                <input type="email" id="email" name="email" placeholder="University Email" required>
+            </div>
+
+            <div class="input-box">
+                <select id="consultation_type" name="consultation_type" required>
+                    <option value="" disabled selected>Select Consultation Type</option>
+                    <option value="academic">Academic Counseling</option>
+                    <option value="personal">Personal/Mental Health</option>
+                    <option value="career">Career Advising</option>
+                    <option value="other">Other/General Inquiry</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="input-box">
+                <input type="time" id="time" name="time" required>
+            </div>
+            
+            <div class="input-box">
+                <textarea id="purpose" name="purpose" rows="4" placeholder="Briefly describe the purpose of your consultation" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Request Appointment</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+</footer>
+
+<script>
+    // JavaScript for the mobile menu toggle (consistent)
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+        const isOpen = toggleBtn.classList.toggle('open');
+        mobileMenu.style.display = isOpen ? 'flex' : 'none'; 
+        toggleBtn.textContent = isOpen ? '▾' : '▸';
+    });
+
+    // Add a feature to style the date/time inputs when a value is present (for better UX)
+    const formInputs = document.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+        // Simple check to add a class if input has a value
+        if (input.value) {
+            input.classList.add('has-value');
+        }
+        input.addEventListener('change', () => {
+             if (input.value) {
+                input.classList.add('has-value');
+            } else {
+                input.classList.remove('has-value');
+            }
+        });
+    });
+</script>
+</body>
+</html>

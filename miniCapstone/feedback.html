@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}"> 
+    <title>Feedback | PHINMA UI iCare</title>
+</head>
+<body>
+<header>
+    <nav class="header-container">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+            <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="iCare Logo">
+        </div>
+
+        <div class="nav-right desktop-only">
+            <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+            <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
+        </div>
+
+        <button class="menu-toggle mobile-only">▸</button>
+    </nav>
+
+    <div class="mobile-menu mobile-only">
+        <a href="{{ url_for('aboutUs_page') }}">About Us</a>
+        <a href="{{ url_for('emergency_contacts_page') }}">Contacts</a>
+    </div>
+</header>
+
+<section class="login-section">
+    <div class="login-container feedback-container">
+        <h1>Share Your Experience</h1>
+        <p class="feedback-subtitle">Your feedback helps us improve and provide better service</p>
+        
+        <form action="{{ url_for('feedback_process') }}" method="POST">
+            {% if message %}
+                <div class="success-message">{{ message }}</div> 
+            {% endif %}
+            
+            <div class="input-box">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="input-box">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="input-box rating-box">
+                <label>Rate Your Experience:</label>
+                <div class="rating">
+                    <label><input type="radio" name="rate" value="1" required><span class="emoji">😡</span></label>
+                    <label><input type="radio" name="rate" value="2"><span class="emoji">😕</span></label>
+                    <label><input type="radio" name="rate" value="3"><span class="emoji">😐</span></label>
+                    <label><input type="radio" name="rate" value="4"><span class="emoji">😊</span></label>
+                    <label><input type="radio" name="rate" value="5"><span class="emoji">😍</span></label>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback or comments" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+</footer>
+
+<script>
+    // JavaScript for the mobile menu toggle (copied from login.html)
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+        const isOpen = toggleBtn.classList.toggle('open');
+        // Use 'flex' for better layout management on mobile menus
+        mobileMenu.style.display = isOpen ? 'flex' : 'none'; 
+        toggleBtn.textContent = isOpen ? '▾' : '▸';
+    });
+    
+    // JavaScript for Rating Selection
+    const ratingInputs = document.querySelectorAll('.rating input[type="radio"]');
+    ratingInputs.forEach(input => {
+        input.addEventListener('change', (e) => {
+            const currentRating = e.target.value;
+            // Remove 'selected' class from all emojis
+            document.querySelectorAll('.emoji').forEach(emoji => {
+                emoji.classList.remove('selected');
+            });
+            // Add 'selected' class to all previous emojis (or just the selected one)
+            // This is simplified to just highlight the selected one
+            e.target.nextElementSibling.classList.add('selected');
+        });
+    });
+</script>
+</body>
+</html>
