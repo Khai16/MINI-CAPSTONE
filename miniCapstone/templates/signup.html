@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - PHINMA UI iCare</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | PHINMA UI iCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
 </head>
-
-
 <body>
-        <header>
-        <nav class="header-container">
-                <div class="nav-left">
-                  <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
-                  <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="Header Logo">
-                </div>
-        <div class="nav-right">
-                <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">AboutUs</a>
-                <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
-        </div>  
-        </nav>
-        </header>
+<header>
+  <nav class="header-container">
+    <div class="nav-left">
+      <img src="{{ url_for('static', filename='images/headerLogo.jpg') }}" alt="Header Logo">
+      <img src="{{ url_for('static', filename='images/iCareLogo.jpg') }}" alt="iCare Logo">
+    </div>
 
-        <section class="hero">
-        <form action="/signup_process" method="post" class="feedback-form">
-                {% if error %}
-                <div class="error-message" style="color: #ae0808; margin-bottom: 1rem; text-align: center;">
-                    {{ error }}
-                </div>
-                {% endif %}
-                
-                <h1>SignUp</h1>
+    <!-- Desktop Navigation -->
+    <div class="nav-right desktop-only">
+      <a href="{{ url_for('aboutUs_page') }}" class="btn btn-outline">About Us</a>
+      <a href="{{ url_for('emergency_contacts_page') }}" class="login-button">Contacts</a>
+    </div>
 
-                <div class="form-group">
-                    <label for="username">Name</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your Name" required>
-                </div>
+    <!-- Mobile Navigation -->
+    <button class="menu-toggle mobile-only">▸</button>
+  </nav>
 
-                 <div class="form-group">
-                    <label for="username">Gender</label>
-                    <input type="text" id="gender" name="gender" placeholder="Enter your Gender" required>
-                </div>
+  <!-- Mobile Dropdown -->
+  <div class="mobile-menu mobile-only">
+    <a href="{{ url_for('aboutUs_page') }}">About Us</a>
+    <a href="{{ url_for('emergency_contacts_page') }}">Contacts</a>
+  </div>
+</header>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
+<section class="signup-section">
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <form action="/signup_process" method="post">
+      {% if error %}
+      <div class="error-message">{{ error }}</div>
+      {% endif %}
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Create a password" required>
-                </div>
+      <div class="input-box">
+        <input type="text" id="username" name="username" placeholder="Enter your name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" id="gender" name="gender" placeholder="Enter your gender" required>
+      </div>
+      <div class="input-box">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+      </div>
 
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
-                </div>
+      <button type="submit" class="btn-submit">Create your account</button>
 
-               <button type="submit" class="btn-submit">Create your account</button>
-                    <p class="switch-text">Already have an account? 
-                     <a href="{{ url_for('login_page') }}" class="btn btn-outline">Log In</a>
-                </p>
-                </form>
-            </form>
-        </div>
-    </section>
+      <p class="switch-text">Already have an account? 
+        <a href="{{ url_for('login_page') }}" class="btn btn-outline">Log In</a>
+      </p>
+    </form>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 PHINMA UI iCare | All Rights Reserved.</p>
-    </footer>
+<footer>
+  <p>&copy; 2025 PHINMA University of Iloilo iCare System | All Rights Reserved.</p>
+</footer>
+
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = toggleBtn.classList.toggle('open');
+    mobileMenu.style.display = isOpen ? 'flex' : 'none';
+    toggleBtn.textContent = isOpen ? '▾' : '▸';
+  });
+</script>
 </body>
 </html>
