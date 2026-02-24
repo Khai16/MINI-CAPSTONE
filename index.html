@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>anime figurines e‑commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="Premium anime figurines – one piece, naruto, demon slayer & more">
+  <meta name="author" content="Themefisher (customized)">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <!-- theme meta -->
+  <meta name="theme-name" content="reporter" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Plugins -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+
+  <!-- Main Style Sheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- tiny inline additions only for centering (no design change, buttons stay small) -->
+  <style>
+    /* ensure main nav is centered (About, Figures, Contact) */
+    .navbar .navbar-nav.mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    /* optional: make nav links slightly larger for readability (but not required) */
+    .nav-link {
+      font-size: 1.1rem;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    /* keep signup/login/cart small - already using btn-sm */
+    .navbar-actions .btn-sm {
+      font-size: 0.875rem;
+      padding: 0.25rem 0.8rem;
+    }
+    .cart-badge {
+      background: #dc3545;
+      color: white;
+      border-radius: 50%;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.75rem;
+      margin-left: 0.3rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navigation">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light px-0">
+      <a class="navbar-brand order-1 py-0" href="index.html">
+        <!-- logo replaced with figurine theme (still using original structure) -->
+        <img loading="prelaod" decoding="async" class="img-fluid" src="images/logo.png" alt="AkibaFigures" style="max-height: 45px;">
+      </a>
+      <div class="navbar-actions order-3 ml-0 ml-md-4 d-flex align-items-center">
+        <!-- SIGN UP / LOGIN / CART LINKS (small as requested) -->
+        <a href="signup.html" class="btn btn-outline-dark btn-sm mr-2 d-none d-md-inline-block">Sign up</a>
+        <a href="login.html" class="btn btn-outline-dark btn-sm mr-2 d-none d-md-inline-block">Log in</a>
+        <a href="cart.html" class="btn btn-outline-dark btn-sm position-relative d-flex align-items-center">
+          🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+        </a>
+        <button aria-label="navbar toggler" class="navbar-toggler border-0 ml-2" type="button" data-toggle="collapse" data-target="#navigation"> <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <form action="#!" class="search order-lg-3 order-md-2 order-3 ml-auto">
+        <input id="search-query" name="s" type="search" placeholder="Search figures..." autocomplete="off">
+      </form>
+      <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
+        <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
+          <li class="nav-item"> <a class="nav-link" href="about.html" >About</a> </li>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Figures </a>
+            <div class="dropdown-menu"> <a class="dropdown-item" href="travel.html">Naruto</a> <a class="dropdown-item" href="travel.html">Demon Slayer</a> <a class="dropdown-item" href="travel.html">One Piece</a> <a class="dropdown-item" href="travel.html">Jujutsu Kaisen</a> </div>
+          </li>
+          <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
+          <!-- mobile signup/login (visible only collapsed) -->
+          <li class="nav-item d-md-none"><a class="nav-link" href="signup.html">Sign up</a></li>
+          <li class="nav-item d-md-none"><a class="nav-link" href="login.html">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="row no-gutters-lg">
+        <div class="col-12">
+          <h2 class="section-title">✨ latest arrivals & popular figures</h2>
+        </div>
+        <div class="col-lg-8 mb-5 mb-lg-0">
+          <div class="row">
+            <!-- main featured product (with price & actions) -->
+            <div class="col-12 mb-4">
+              <article class="card article-card">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">04 Jun 2025</span> <span class="text-uppercase">new</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/post-1.jpg" alt="Naruto Uzumaki Figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-1">
+                  <ul class="post-meta mb-2">
+                    <li> <a href="#!">Naruto</a> <a href="#!">Limited</a> </li>
+                  </ul>
+                  <h2 class="h1"><a class="post-title" href="article.html">Naruto Uzumaki – 六道仙人 mode (exclusive)</a></h2>
+                  <p class="card-text">Masterfully sculpted 24cm figure, includes interchangeable face plates and rasengan effect. official license.</p>
+                  <!-- price & action area -->
+                  <div class="product-actions">
+                    <span class="price-tag">¥12,800</span>
+                     <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 2 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">03 Jun 2025</span> <span class="text-uppercase">pre‑order</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/post-2.jpg" alt="Rengoku Figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">Demon Slayer</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Kyojuro Rengoku – flame breathing ver.</a></h2>
+                  <p class="card-text">1/8 scale with flame effect base, coming June 2025.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">₱3,494.00</span>
+                      <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 3 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">02 Jun 2025</span> <span class="text-uppercase">in stock</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/ls-2.jpg" alt="Zoro figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">One Piece</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Roronoa Zoro – enma & wado set</a></h2>
+                  <p class="card-text">Dynamic battle pose, three swords drawn, 22cm.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">¥11,200</span>
+                     <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 4 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">01 Jun 2025</span> <span class="text-uppercase">rare</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/cr-2.jpg" alt="Gojo figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">Jujutsu Kaisen</a> <a href="#!">sold out</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Satoru Gojo – unlimited hollow purple</a></h2>
+                  <p class="card-text">LED light-up effect, last restock.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">¥14,300</span>
+                     <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 5 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">30 May 2025</span> <span class="text-uppercase">back in stock</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/cr-1.jpg" alt="Levi figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">Attack on Titan</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Levi Ackerman – cleaning corps ver.</a></h2>
+                  <p class="card-text">Iconic mop & bucket, exclusive base.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">¥10,800</span>
+                      <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 6 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">29 May 2025</span> <span class="text-uppercase">exclusive</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/post-4.jpg" alt="Nezuko figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">Demon Slayer</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Nezuko Kamado – blood demon art</a></h2>
+                  <p class="card-text">With removable bamboo muzzle and effect.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">¥13,600</span>
+                     <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                </div>
+              </article>
+            </div>
+            <!-- grid item 7 -->
+            <div class="col-md-6 mb-4">
+              <article class="card article-card article-card-sm h-100">
+                <a href="article.html">
+                  <div class="card-image">
+                    <div class="post-info"> <span class="text-uppercase">28 May 2025</span> <span class="text-uppercase">pre-order</span> </div>
+                    <img loading="lazy" decoding="async" src="images/post/post-8.jpg" alt="Makima figure" class="w-100" style="border-radius: 10px;">
+                  </div>
+                </a>
+                <div class="card-body px-0 pb-0">
+                  <ul class="post-meta mb-2"> <li> <a href="#!">Chainsaw Man</a> </li> </ul>
+                  <h2><a class="post-title" href="article.html">Makima – contract seat ver.</a></h2>
+                  <p class="card-text">With detailed chair and pochita.</p>
+                  <div class="product-actions">
+                    <span class="price-tag">¥15,200</span>
+                    <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                    <button class="btn btn-primary rounded-pill px-4 py-1" style="background:#0047ab;" onclick="buyNow('Naruto Six Paths',1450)">Buy Now</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- pagination same as original (untouched) -->
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12">
+                  <nav class="mt-4">
+                    <nav class="mb-md-50">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item"> <a class="page-link" href="#!" aria-label="Pagination Arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/> </svg> </a> </li>
+                        <li class="page-item active"> <a href="index.html" class="page-link">1</a> </li>
+                        <li class="page-item"> <a href="#!" class="page-link">2</a> </li>
+                        <li class="page-item"> <a class="page-link" href="#!" aria-label="Pagination Arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /> </svg> </a> </li>
+                      </ul>
+                    </nav>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sidebar (almost original, but author bio replaced with figurine store profile) -->
+        <div class="col-lg-4">
+          <div class="widget-blocks">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="widget">
+                  <div class="widget-body text-center">
+                    <img loading="lazy" decoding="async" src="images/author.jpg" alt="store owner" class="w-100 author-thumb-sm d-block" style="border-radius: 10px;">
+                    <h2 class="widget-title my-3">otaku's choice</h2>
+                    <p class="mb-3 pb-2">⭐ 100% authentic figures · worldwide shipping · we double-box for protection. over 5000+ happy collectors.</p>
+                    <a href="about.html" class="btn btn-sm btn-outline-primary">about our store</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-6">
+                <div class="widget">
+                  <h2 class="section-title mb-3">本月推荐 / monthly picks</h2>
+                  <div class="widget-body">
+                    <div class="widget-list">
+                      <article class="card mb-4">
+                        <div class="card-image">
+                          <div class="post-info"> <span class="text-uppercase">just arrived</span> </div>
+                          <img loading="lazy" decoding="async" src="images/post/post-9.jpg" alt="anime figure" class="w-100" style="border-radius: 10px;">
+                        </div>
+                        <div class="card-body px-0 pb-1">
+                          <h3><a class="post-title post-title-sm" href="article.html">Shinobu Kocho – butterfly ver.</a></h3>
+                          <p class="card-text">Limited 500pcs worldwide. ¥11,800</p>
+                          <div class="product-actions">
+                            <button class="btn btn-outline-dark rounded-pill px-4 py-1 " onclick="addToCart('Naruto Six Paths',1450)">Add To Cart</button>
+                        </div>
+                      </article>
+                      <!-- small side items (with added price & cart) -->
+                      <a class="media align-items-center" href="article.html" style="text-decoration:none; color:inherit;">
+                        <img loading="lazy" decoding="async" src="images/post/yu.png" alt="figure thumb" class="w-100" style="max-width:80px" style="border-radius: 10px;">
+                        <div class="media-body ml-3">
+                          <h3 style="margin-top:-5px">Itadori Yuji · ¥8,700</h3>
+                          <button class="btn-smart add-cart p-0" style="background:none; border:none; color:#0047ab;" onclick="addToCart('Itadori Yuji',8700); event.preventDefault();">➕ add</button>
+                        </div>
+                      </a>
+                      <a class="media align-items-center" href="article.html" style="text-decoration:none; color:inherit;">
+                          <img loading="lazy" decoding="async" src="images/post/post-10.jpg" alt="figure thumb" class="w-100" style="max-width:80px" style="border-radius: 10px;">
+                        <div class="media-body ml-3">
+                          <h3 style="margin-top:-5px">Eren Titan · ¥9,900</h3>
+                          <button class="btn-smart add-cart p-0" style="background:none; border:none; color:#0047ab;" onclick="addToCart('Eren Titan',9900); event.preventDefault();">➕ add</button>
+                        </div>
+                      </a>
+                      <a class="media align-items-center" href="article.html">
+                        <img loading="lazy" decoding="async" src="images/post/post-5.jpg" alt="figure thumb" class="w-100" style="max-width:80px" style="border-radius: 10px;">
+                        <div class="media-body ml-3">
+                          <h3 style="margin-top:-5px">Rem (crystal dress) ¥13,200</h3>
+                          <button class="btn-smart add-cart p-0" style="background:none; border:none; color:#0047ab;" onclick="addToCart('Rem Crystal',13200); event.preventDefault();">➕ add</button>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-6">
+                <div class="widget">
+                  <h2 class="section-title mb-3">Categories</h2>
+                  <div class="widget-body">
+                    <ul class="widget-list">
+                      <li><a href="#!">Naruto <span class="ml-auto">(12)</span></a></li>
+                      <li><a href="#!">One Piece <span class="ml-auto">(9)</span></a></li>
+                      <li><a href="#!">Demon Slayer <span class="ml-auto">(7)</span></a></li>
+                      <li><a href="#!">Jujutsu Kaisen <span class="ml-auto">(5)</span></a></li>
+                      <li><a href="#!">Dragon Ball <span class="ml-auto">(11)</span></a></li>
+                      <li><a href="#!">Attack on Titan <span class="ml-auto">(6)</span></a></li>
+                      <li><a href="#!">Pre‑order <span class="ml-auto">(8)</span></a></li>
+                      <li><a href="#!">Limited edition <span class="ml-auto">(4)</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark mt-5">
+  <div class="container section">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <a class="d-inline-block mb-4 pb-2" href="index.html">
+          <img loading="prelaod" decoding="async" class="img-fluid" src="images/logo-white.png" alt="AkibaFigures" style="max-height: 40px;">
+        </a>
+        <ul class="p-0 d-flex navbar-footer mb-0 list-unstyled justify-content-center flex-wrap">
+          <li class="nav-item my-0"> <a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item my-0"> <a class="nav-link" href="article.html">Figures</a></li>
+          <li class="nav-item my-0"> <a class="nav-link" href="privacy-policy.html">Privacy</a></li>
+          <li class="nav-item my-0"> <a class="nav-link" href="terms-conditions.html">Terms</a></li>
+          <li class="nav-item my-0"> <a class="nav-link" href="404.html">Support</a></li>
+        </ul>
+        <p class="text-light text-center mt-3 mb-0"><small>🛡️ all figures authentic · pay later available · 24/7 otaku support</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright bg-dark content text-center border-top border-secondary pt-3">Designed by Themefisher · e‑commerce anime figurines <span id="liveCartBadge" style="display:none;"></span></div>
+</footer>
+
+<!-- JS Plugins -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- Main Script & cart simulation -->
+<script src="js/script.js"></script>
+<script>
+  // simple cart simulation – no design change, just functionality.
+  let cartItems = JSON.parse(localStorage.getItem('akibaCart')) || [];
+  function updateCartCounter() {
+    const countEl = document.getElementById('cartCount');
+    if (countEl) countEl.innerText = cartItems.reduce((acc, i) => acc + (i.qty || 1), 0);
+    localStorage.setItem('akibaCart', JSON.stringify(cartItems));
+  }
+  window.addToCart = function(name, price) {
+    cartItems.push({ name, price, qty: 1 });
+    updateCartCounter();
+    alert(`🛒 ${name} added to cart (¥${price.toLocaleString()})`);
+  };
+  window.buyNow = function(name, price) {
+    cartItems.push({ name, price, qty: 1 });
+    updateCartCounter();
+    alert(`🚀 Proceeding to checkout with ${name} · total ¥${price.toLocaleString()}`);
+    window.location.href = 'cart.html'; // pretend cart page
+  };
+  // initial update
+  updateCartCounter();
+
+  // also handle potential clicks on readmore etc (but not needed)
+</script>
+<!-- note: all original classes and structure untouched, only extra product info & buttons inserted inside cards. -->
+</body>
+</html>
